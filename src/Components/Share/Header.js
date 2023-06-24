@@ -1,5 +1,7 @@
 import React from 'react';
-
+import { BsFillCartDashFill } from 'react-icons/bs';
+import { FaRegHeart } from 'react-icons/fa';
+import { ImSearch } from 'react-icons/im';
 const Header = () => {
   const handleClick = e => {
     e.preventDefault();
@@ -7,19 +9,34 @@ const Header = () => {
     console.log(value);
   };
   return (
-    <div className="flex">
-      <div>
+    <div className="flex mx-20">
+      <div className="flex items-center">
         {' '}
-        <h1>Hello</h1>
+        <h1 className="text-4xl font-extrabold uppercase">
+          Elec<span className="text-primary">tro</span> Li
+          <span className="text-primary italic">gh</span>t
+        </h1>
       </div>
-      <div>
+
+      <div className="py-2  ml-20 flex">
         <input
           onChange={handleClick}
-          className="w-[500px] border-2 p-2 rounded-lg"
-          placeholder="hello dado"
+          className="w-[500px] border-2 p-2 rounded-l-lg border-blue-200"
+          placeholder="hello"
           type="search"
         />
-        <input className="btn btn-primary" type="submit" value="Search" />
+        <button className="px-3 bg-primary pt-[6px] pb-4 rounded-r-lg ">
+          {' '}
+          <ImSearch className="text-3xl pt-1 -mb-2 text-white hover:text-black" />
+        </button>
+
+        <div className="flex items-center ml-20">
+          <FaRegHeart className="text-2xl" />
+          <div className="flex ml-10 ">
+            <BsFillCartDashFill className="text-2xl mt-1" />
+            <h1 className="text-2xl ml-1 font-bold">Cart</h1>
+          </div>
+        </div>
       </div>
     </div>
   );

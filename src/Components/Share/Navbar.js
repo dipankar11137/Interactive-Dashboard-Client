@@ -1,7 +1,6 @@
 import { signOut } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { MdOutlineBikeScooter } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 
@@ -129,12 +128,7 @@ const Navbar = () => {
               onClick={() => setSelectedButton('Button 1')}
               className="btn btn-ghost text-white font-extrabold text-3xl uppercase"
             >
-              {' '}
-              <MdOutlineBikeScooter
-                className="mr-4 text-yellow-400 animate-bounce"
-                size={45}
-              />{' '}
-              Agriculture E-commerce{' '}
+              ELECTRO LIGHT
             </div>
           </Link>
         </div>
