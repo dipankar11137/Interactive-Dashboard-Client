@@ -2,6 +2,7 @@ import React from 'react';
 import { BsFillCartDashFill } from 'react-icons/bs';
 import { FaRegHeart } from 'react-icons/fa';
 import { ImSearch } from 'react-icons/im';
+import { Link } from 'react-router-dom';
 const Header = () => {
   const handleClick = e => {
     e.preventDefault();
@@ -12,10 +13,13 @@ const Header = () => {
     <div className="flex mx-20">
       <div className="flex items-center">
         {' '}
-        <h1 className="text-4xl font-extrabold uppercase">
-          Elec<span className="text-primary">tro</span> Li
-          <span className="text-primary italic">gh</span>t
-        </h1>
+        <Link to="/">
+          {' '}
+          <h1 className="text-4xl font-extrabold uppercase">
+            Elec<span className="text-primary">tro</span> Li
+            <span className="text-primary italic">gh</span>t
+          </h1>
+        </Link>
       </div>
 
       <div className="py-2  ml-20 flex">
