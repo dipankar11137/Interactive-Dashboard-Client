@@ -23,7 +23,7 @@ const Navbar = () => {
             : ''
         }
       >
-        <Link to="/" className="font-bold  text-xl ">
+        <Link to="/" className="  text-xl ">
           Home
         </Link>
       </li>
@@ -35,7 +35,7 @@ const Navbar = () => {
             : ''
         }
       >
-        <Link to="/blog" className="font-bold  text-xl ">
+        <Link to="/blog" className="  text-xl ">
           Blog
         </Link>
       </li>
@@ -44,7 +44,7 @@ const Navbar = () => {
         <>
           {user.email === 'abc@def.com' ? (
             <>
-              {/* {' '}
+              {' '}
               <li
                 onClick={() => setSelectedButton('Button 4')}
                 className={
@@ -53,20 +53,22 @@ const Navbar = () => {
                     : ''
                 }
               >
-                <Link to="/manageItem" className="font-bold  text-xl ">
+                <Link to="/manageItem" className="  text-xl ">
                   Manage Item
                 </Link>
               </li>
               <li
                 onClick={() => setSelectedButton('Button 8')}
                 className={
-                  selectedButton === 'Button 8' ? 'bg-primary  rounded-lg' : ''
+                  selectedButton === 'Button 8'
+                    ? 'bg-primary text-black rounded-lg'
+                    : ''
                 }
               >
-                <Link to="/manageBooking" className="font-bold  text-xl ">
+                <Link to="/manageBooking" className="  text-xl ">
                   Manage Booking
                 </Link>
-              </li> */}
+              </li>
             </>
           ) : (
             <li
@@ -77,7 +79,7 @@ const Navbar = () => {
                   : ''
               }
             >
-              <Link to="/myItem" className="font-bold  text-xl ">
+              <Link to="/myItem" className="  text-xl ">
                 My Booking
               </Link>
             </li>
@@ -95,9 +97,9 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="px-20 bg-neutral">
-      <div class="navbar px-12  h-[8px] mx-auto  text-white shadow-2xl rounded-lg">
-        <div class="navbar-start">
+    <div className=" bg-neutral">
+      <div class="navbar   h-[8px] mx-auto  text-white shadow-2xl rounded-lg">
+        <div class="navbar-start  w-[500px] pl-20">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">
               <svg
@@ -122,21 +124,26 @@ const Navbar = () => {
               {menuItem}
             </ul>
           </div>
-          <Link to={'/'}>
-            <div className=" ">
-              <select className="select select-ghost w-full max-w-xs">
-                <option disabled selected>
-                  Pick the best JS framework
-                </option>
-                <option>Svelte</option>
-                <option>Vue</option>
-                <option>React</option>
-              </select>
-            </div>
-          </Link>
+          {/* <Link to={'/'}> */}
+          <div className=" ">
+            <select
+              onClick={() => setSelectedButton('B')}
+              className="select   text-white w-full text-xl bg-neutral max-w-xs "
+            >
+              <option disabled selected>
+                All Categories
+              </option>
+              <option>TV</option>
+              <option>Headphone</option>
+              <option>Computer Accessories </option>
+              <option>Mobile </option>
+              <option>Others </option>
+            </select>
+          </div>
+          {/* </Link> */}
         </div>
-        <div class="navbar-end hidden lg:flex">
-          <ul class="menu menu-horizontal  font-bold text-xl hover:bg-se">
+        <div class="navbar-end hidden lg:flex lg:w-[800px] ml-20 ">
+          <ul class="menu menu-horizontal font-semibold text-xl hover:bg-se">
             {menuItem}
           </ul>
         </div>
