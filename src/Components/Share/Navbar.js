@@ -9,6 +9,7 @@ const Navbar = () => {
   const logout = () => {
     signOut(auth);
   };
+  console.log(user);
 
   const [selectedButton, setSelectedButton] = useState('');
 
@@ -18,7 +19,7 @@ const Navbar = () => {
         onClick={() => setSelectedButton('Button 1')}
         className={
           selectedButton === 'Button 1'
-            ? 'bg-primary text-white rounded-lg'
+            ? 'bg-primary text-black  rounded-lg'
             : ''
         }
       >
@@ -30,7 +31,7 @@ const Navbar = () => {
         onClick={() => setSelectedButton('Button 2')}
         className={
           selectedButton === 'Button 2'
-            ? 'bg-primary text-white rounded-lg'
+            ? 'bg-primary text-black rounded-lg'
             : ''
         }
       >
@@ -43,12 +44,12 @@ const Navbar = () => {
         <>
           {user.email === 'abc@def.com' ? (
             <>
-              {' '}
+              {/* {' '}
               <li
                 onClick={() => setSelectedButton('Button 4')}
                 className={
                   selectedButton === 'Button 4'
-                    ? 'bg-primary text-white rounded-lg'
+                    ? 'bg-primary  rounded-lg text-black'
                     : ''
                 }
               >
@@ -59,15 +60,13 @@ const Navbar = () => {
               <li
                 onClick={() => setSelectedButton('Button 8')}
                 className={
-                  selectedButton === 'Button 8'
-                    ? 'bg-primary text-white rounded-lg'
-                    : ''
+                  selectedButton === 'Button 8' ? 'bg-primary  rounded-lg' : ''
                 }
               >
                 <Link to="/manageBooking" className="font-bold  text-xl ">
                   Manage Booking
                 </Link>
-              </li>
+              </li> */}
             </>
           ) : (
             <li
@@ -97,7 +96,7 @@ const Navbar = () => {
   );
   return (
     <div className="px-20 bg-neutral">
-      <div class="navbar px-12 mx-auto  text-white shadow-2xl rounded-lg">
+      <div class="navbar px-12  h-[8px] mx-auto  text-white shadow-2xl rounded-lg">
         <div class="navbar-start">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -118,22 +117,26 @@ const Navbar = () => {
             </label>
             <ul
               tabindex="0"
-              class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-neutral"
+              class="menu menu-compact dropdown-content  shadow bg-base-100 rounded-box w-52 text-neutral"
             >
               {menuItem}
             </ul>
           </div>
           <Link to={'/'}>
-            <div
-              onClick={() => setSelectedButton('Button 1')}
-              className="btn btn-ghost text-white font-extrabold text-3xl uppercase"
-            >
-              ELECTRO LIGHT
+            <div className=" ">
+              <select className="select select-ghost w-full max-w-xs">
+                <option disabled selected>
+                  Pick the best JS framework
+                </option>
+                <option>Svelte</option>
+                <option>Vue</option>
+                <option>React</option>
+              </select>
             </div>
           </Link>
         </div>
         <div class="navbar-end hidden lg:flex">
-          <ul class="menu menu-horizontal p-0 font-bold text-xl hover:bg-se">
+          <ul class="menu menu-horizontal  font-bold text-xl hover:bg-se">
             {menuItem}
           </ul>
         </div>
