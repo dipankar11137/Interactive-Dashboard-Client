@@ -143,7 +143,7 @@ const Navbar = () => {
           {/* </Link> */}
         </div>
         <div class="navbar-end hidden lg:flex lg:w-[800px] ml-20 ">
-          <ul class="menu menu-horizontal font-semibold text-xl hover:bg-se">
+          <ul class="menu menu-horizontal font-serif text-lg hover:bg-se">
             {menuItem}
           </ul>
         </div>
