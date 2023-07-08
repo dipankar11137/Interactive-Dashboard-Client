@@ -23,11 +23,11 @@ const Banner = () => {
 
   return (
     <div
-      // style={{
-      //   backgroundImage: `url(${backgroundImage})`,
-      //   backgroundRepeat: 'no-repeat',
-      //   backgroundSize: 'cover',
-      // }}
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+      }}
       className="bg-white"
     >
       <div className="mx-6 p-1 rounded-2xl text-black">
@@ -39,19 +39,25 @@ const Banner = () => {
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
               }}
-              className="grid  grid-cols-3  gap-x-3"
+              className="grid  grid-cols-3  gap-x-3 rounded-lg"
             >
-              <div className="flex justify-center items-center bg-red-400">
+              <div className="flex justify-center items-center ">
                 <div>
-                  <h1 className="text-6xl font-extrabold text-center">
-                    Top Brands lowest Prices WIDE RANGE OF MOBILE PHONES!
+                  <p className="ml-12">
+                    Top Brands{' '}
+                    <span className="text-2xl font-bold">lowest</span> Prices
+                  </p>
+                  <h1 className="text-4xl font-extrabold text-center">
+                    WIDE RANGE OF MOBILE PHONES!
                   </h1>
-                  <button className="btn btn-primary font-bold">Buy Now</button>
+                  <button className="btn btn-primary font-bold lg:ml-32 mt-5">
+                    Buy Now
+                  </button>
                 </div>
               </div>
               <div className="col-span-2">
                 <img
-                  className=" rounded-l-2xl w-full h-[600px] pic-style"
+                  className=" rounded-l-2xl w-full h-[500px] pic-style"
                   src={phone}
                   alt=""
                 />
