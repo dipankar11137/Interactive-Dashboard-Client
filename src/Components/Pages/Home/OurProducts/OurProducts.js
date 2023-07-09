@@ -4,7 +4,7 @@ import Mobiles from './Product/Mobiles';
 
 const OurProducts = () => {
   return (
-    <div className="mx-20 mt-10">
+    <div className="mx-20 mt-10 mb-28">
       <h1 className="my-10 text-4xl font-semibold text-center">Our Products</h1>
       <div className="flex gap-20">
         <div>
@@ -14,7 +14,6 @@ const OurProducts = () => {
           <Mobiles />
         </div>
       </div>
-      <h1>Products</h1>
     </div>
   );
 };

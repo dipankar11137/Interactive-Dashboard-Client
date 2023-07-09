@@ -1,8 +1,9 @@
 import React from 'react';
+import '../../../../CSS/Product.css';
 
 const Product = () => {
   return (
-    <div className="card w-72 glass">
+    <div className="card w-60 glass">
       <figure>
         <img
           className="h-44 "
@@ -15,7 +16,7 @@ const Product = () => {
         <h2 className=" text-center text-xl font-bold">160000 BDT</h2>
 
         <div className="card-actions justify-center">
-          <button className="btn btn-neutral text-white hover:btn-primary">
+          <button className="btn btn-neutral text-white hover:btn-primary mt-2">
             Add To Cart
           </button>
         </div>

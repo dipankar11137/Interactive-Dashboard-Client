@@ -9,7 +9,7 @@ const Navbar = () => {
   const logout = () => {
     signOut(auth);
   };
-  console.log(user);
+
 
   const [selectedButton, setSelectedButton] = useState('');
 
