@@ -9,8 +9,9 @@ const Home = () => {
     <div className="h-screen">
       <Banner />
       <OurProducts />
-      {/* <Mobiles /> */}
-      <BeforeFooter />
+      <div>
+        <BeforeFooter />
+      </div>
       <Footer />
     </div>
   );
