@@ -11,7 +11,11 @@ const NewProducts = () => {
   }, [products]);
   return (
     <div className="">
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-3">
+      <div
+        data-aos="zoom-in"
+        data-aos-duration="3000"
+        className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-3"
+      >
         {products.slice(0, 3).map(product => (
           <Product key={product._id} product={product}></Product>
         ))}

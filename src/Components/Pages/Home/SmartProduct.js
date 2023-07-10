@@ -4,7 +4,12 @@ const SmartProduct = () => {
   return (
     <div className="mx-32 py-32">
       <div className="flex gap-8">
-        <div className="flex items-center bg-slate-100 rounded-lg py-16 px-14 ">
+        <div
+          data-aos="fade-right"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+          className="flex items-center bg-slate-100 rounded-lg py-16 px-14 "
+        >
           <div className=" mr-3 ">
             <h1 className="text-sm">New Collections , New Trendy</h1>
             <p className="text-4xl mt-1 mb-4 font-bold uppercase">Smart tv</p>
@@ -16,7 +21,12 @@ const SmartProduct = () => {
             alt=""
           />
         </div>
-        <div className="flex items-center bg-slate-100 rounded-lg py-16 px-14 ">
+        <div
+          data-aos="fade-left"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+          className="flex items-center bg-slate-100 rounded-lg py-16 px-14 "
+        >
           <div className=" mr-3 ">
             <h1 className="text-sm">Top Brands , lowest price</h1>
             <p className="text-3xl mt-1 mb-4 font-bold uppercase">

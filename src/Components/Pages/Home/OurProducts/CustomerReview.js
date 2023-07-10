@@ -337,7 +337,7 @@ const CustomerReview = () => {
 
       <div className="my-8">
         <h1 className="text-xl font-semibold">BEST SELLER</h1>
-        <div className="flex mt-10">
+        <div data-aos="fade-up" data-aos-duration="3000" className="flex mt-10">
           <img
             className="h-20 mt-5"
             src="https://wikimovel.com/images/thumb/1/1b/Samsung-Galaxy-F62.png/300px-Samsung-Galaxy-F62.png"
@@ -349,7 +349,11 @@ const CustomerReview = () => {
             <h1 className="font-bold"> $12,990.00</h1>
           </div>
         </div>
-        <div className=" flex mt-10">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="3000"
+          className=" flex mt-10"
+        >
           <img className="h-20 mt-5" src={sam} alt="" />
           <div>
             {' '}

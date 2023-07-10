@@ -26,7 +26,7 @@ const Header = () => {
         <input
           onChange={handleClick}
           className="w-[500px] border-2 p-2 rounded-l-lg border-blue-200"
-          placeholder="hello"
+          placeholder="Search Hare"
           type="search"
         />
         <button className="px-3 bg-primary pt-[6px] pb-4 rounded-r-lg ">
