@@ -3,6 +3,7 @@ import CustomerReview from './CustomerReview';
 import ExcitingDeals from './Product/ExcitingDeals';
 import Mobiles from './Product/Mobiles';
 import NewProducts from './Product/NewProducts';
+import Tv from './Product/Tv';
 
 const OurProducts = () => {
   return (
@@ -18,6 +19,7 @@ const OurProducts = () => {
           <NewProducts />
           <Mobiles />
           <ExcitingDeals />
+          <Tv />
         </div>
       </div>
     </div>
