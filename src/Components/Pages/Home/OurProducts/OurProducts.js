@@ -1,16 +1,20 @@
 import React from 'react';
 import CustomerReview from './CustomerReview';
 import Mobiles from './Product/Mobiles';
+import NewProducts from './Product/NewProducts';
 
 const OurProducts = () => {
   return (
     <div className="mx-20 mt-10 mb-28">
-      <h1 className="my-10 text-4xl font-semibold text-center">Our Products</h1>
+      <h1 className="my-10 text-4xl text-center">
+        Our <span className=" font-semibold">New Products</span>
+      </h1>
       <div className="flex gap-20">
         <div>
           <CustomerReview />
         </div>
         <div className=" w-full">
+          <NewProducts />
           <Mobiles />
         </div>
       </div>

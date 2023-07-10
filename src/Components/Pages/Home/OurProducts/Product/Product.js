@@ -16,7 +16,7 @@ const Product = () => {
         <h2 className=" text-center text-xl font-bold">160000 BDT</h2>
 
         <div className="card-actions justify-center">
-          <button className="btn btn-neutral text-white hover:btn-primary mt-2">
+          <button className="px-4 py-2 rounded-lg bg-neutral text-white hover:btn-primary mt-2 uppercase">
             Add To Cart
           </button>
         </div>
