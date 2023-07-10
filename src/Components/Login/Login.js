@@ -7,7 +7,6 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 // import axios from "axios";
-import { toast } from 'react-toastify';
 import Loading from '../Share/Loading';
 
 const Login = () => {
@@ -42,16 +41,9 @@ const Login = () => {
     );
   }
   const onSubmit = async data => {
-    const email = data.email;
+  
     await signInWithEmailAndPassword(data.email, data.password);
-    toast.success('Successfully Login');
-    // const { accessToken } = await axios.post(
-    //   "https://boxberry.onrender.com/login",
-    //   {
-    //     email,
-    //   }
-    // );
-    // console.log(accessToken);
+    
   };
 
   return (
