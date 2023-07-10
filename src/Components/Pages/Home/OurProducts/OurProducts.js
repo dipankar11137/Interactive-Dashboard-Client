@@ -1,6 +1,8 @@
 import React from 'react';
 import CustomerReview from './CustomerReview';
+import Computer from './Product/Computer';
 import ExcitingDeals from './Product/ExcitingDeals';
+import Headphone from './Product/Headphone';
 import Mobiles from './Product/Mobiles';
 import NewProducts from './Product/NewProducts';
 import Tv from './Product/Tv';
@@ -19,7 +21,9 @@ const OurProducts = () => {
           <NewProducts />
           <Mobiles />
           <ExcitingDeals />
+          <Computer />
           <Tv />
+          <Headphone />
         </div>
       </div>
     </div>
