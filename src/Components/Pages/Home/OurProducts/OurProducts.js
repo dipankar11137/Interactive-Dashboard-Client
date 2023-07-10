@@ -1,5 +1,6 @@
 import React from 'react';
 import CustomerReview from './CustomerReview';
+import ExcitingDeals from './Product/ExcitingDeals';
 import Mobiles from './Product/Mobiles';
 import NewProducts from './Product/NewProducts';
 
@@ -16,6 +17,7 @@ const OurProducts = () => {
         <div className=" w-full">
           <NewProducts />
           <Mobiles />
+          <ExcitingDeals />
         </div>
       </div>
     </div>
