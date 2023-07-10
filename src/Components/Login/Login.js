@@ -7,9 +7,8 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 // import axios from "axios";
-import Loading from "../Share/Loading";
-import login from "../../Images/Login/login.jpg";
-import { toast } from "react-toastify";
+import { toast } from 'react-toastify';
+import Loading from '../Share/Loading';
 
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -25,7 +24,7 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  let from = location.state?.from?.pathname || "/";
+  let from = location.state?.from?.pathname || '/';
 
   if (user || gUser) {
     navigate(from, { replace: true });
@@ -42,10 +41,10 @@ const Login = () => {
       </p>
     );
   }
-  const onSubmit = async (data) => {
+  const onSubmit = async data => {
     const email = data.email;
     await signInWithEmailAndPassword(data.email, data.password);
-    toast.success("Successfully Login");
+    toast.success('Successfully Login');
     // const { accessToken } = await axios.post(
     //   "https://boxberry.onrender.com/login",
     //   {
@@ -56,12 +55,9 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center h-screen bg-slate-700">
-      <div className="w-4/12 pt-40">
-        <img className="w-11/12 rounded-xl" src={login} alt="" />
-      </div>
-      <div className="flex justify-center items-center ">
-        <div className="card w-96 shadow-2xl bg-violet-50">
+    <div className="flex justify-center ">
+      <div className="flex justify-center mt-5 ">
+        <div className="card w-96 shadow-2xl shadow-blue-900 bg-violet-50">
           <div className="card-body">
             <h2 className="text-center text-2xl">Login</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -73,24 +69,24 @@ const Login = () => {
                   type="email"
                   placeholder="Your Email"
                   className="input input-bordered bg-white w-full max-w-xs"
-                  {...register("email", {
+                  {...register('email', {
                     required: {
                       value: true,
-                      message: "Email is Required",
+                      message: 'Email is Required',
                     },
                     pattern: {
                       value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                      message: "Provide a valid Email",
+                      message: 'Provide a valid Email',
                     },
                   })}
                 />
                 <label className="label">
-                  {errors.email?.type === "required" && (
+                  {errors.email?.type === 'required' && (
                     <span className="label-text-alt text-red-500">
                       {errors.email.message}
                     </span>
                   )}
-                  {errors.email?.type === "pattern" && (
+                  {errors.email?.type === 'pattern' && (
                     <span className="label-text-alt text-red-500">
                       {errors.email.message}
                     </span>
@@ -105,24 +101,24 @@ const Login = () => {
                   type="password"
                   placeholder="Password"
                   className="input input-bordered bg-white w-full max-w-xs"
-                  {...register("password", {
+                  {...register('password', {
                     required: {
                       value: true,
-                      message: "Password is Required",
+                      message: 'Password is Required',
                     },
                     minLength: {
                       value: 6,
-                      message: "Must be 6 characters or longer",
+                      message: 'Must be 6 characters or longer',
                     },
                   })}
                 />
                 <label className="label">
-                  {errors.password?.type === "required" && (
+                  {errors.password?.type === 'required' && (
                     <span className="label-text-alt text-red-500">
                       {errors.password.message}
                     </span>
                   )}
-                  {errors.password?.type === "minLength" && (
+                  {errors.password?.type === 'minLength' && (
                     <span className="label-text-alt text-red-500">
                       {errors.password.message}
                     </span>
@@ -139,7 +135,7 @@ const Login = () => {
             </form>
             <p>
               <small>
-                New to BoxBerry Motor?{" "}
+                New to ELECTRO LIGHT?{' '}
                 <Link to="/createAccount" className="text-orange-600 font-bold">
                   Create New Account
                 </Link>
