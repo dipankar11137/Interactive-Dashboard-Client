@@ -23,7 +23,7 @@ const Navbar = () => {
             : ''
         }
       >
-        <Link to="/" className="  text-xl ">
+        <Link to="/" className="  ">
           Home
         </Link>
       </li>
@@ -35,7 +35,7 @@ const Navbar = () => {
             : ''
         }
       >
-        <Link to="/blog" className="  text-xl ">
+        <Link to="/blog" className="   ">
           Blog
         </Link>
       </li>
@@ -53,20 +53,8 @@ const Navbar = () => {
                     : ''
                 }
               >
-                <Link to="/manageItem" className="  text-xl ">
-                  Manage Item
-                </Link>
-              </li>
-              <li
-                onClick={() => setSelectedButton('Button 8')}
-                className={
-                  selectedButton === 'Button 8'
-                    ? 'bg-primary text-black rounded-lg'
-                    : ''
-                }
-              >
-                <Link to="/manageBooking" className="  text-xl ">
-                  Manage Booking
+                <Link to="/dashboard" className="   ">
+                  Dashboard
                 </Link>
               </li>
             </>
@@ -79,13 +67,25 @@ const Navbar = () => {
                   : ''
               }
             >
-              <Link to="/myItem" className="  text-xl ">
+              <Link to="/myBooking" className="   ">
                 My Booking
               </Link>
             </li>
           )}
         </>
       )}
+      <li
+        onClick={() => setSelectedButton('Button 8')}
+        className={
+          selectedButton === 'Button 8'
+            ? 'bg-primary text-black rounded-lg'
+            : ''
+        }
+      >
+        <Link to="/contact" className="  ">
+          Contact
+        </Link>
+      </li>
 
       <li>
         {user ? (
@@ -142,8 +142,8 @@ const Navbar = () => {
           </div>
           {/* </Link> */}
         </div>
-        <div class="navbar-end hidden lg:flex lg:w-[800px] ml-20 ">
-          <ul class="menu menu-horizontal font-serif text-lg hover:bg-se">
+        <div class="navbar-end hidden lg:flex lg:w-[800px] ml-20 mr-20">
+          <ul class="menu menu-horizontal font-serif text-lg hover:bg-se ">
             {menuItem}
           </ul>
         </div>
