@@ -12,6 +12,7 @@ import NotFound from './Components/Share/NotFound';
 // aos
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import About from './Components/Pages/About/About';
 AOS.init();
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/createAccount" element={<CreateAccount />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
+        <Route path="/about" element={<About />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/*" element={<NotFound />}></Route>
       </Routes>

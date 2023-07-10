@@ -35,8 +35,8 @@ const Navbar = () => {
             : ''
         }
       >
-        <Link to="/blog" className="   ">
-          Blog
+        <Link to="/about" className="   ">
+          About
         </Link>
       </li>
 
