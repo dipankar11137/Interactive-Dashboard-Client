@@ -21,6 +21,7 @@ const Home = () => {
         <SmartProduct />
       </div>
       <BeforeFooter />
+
       <Footer />
     </div>
   );

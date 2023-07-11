@@ -14,6 +14,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import RequireAuth from './Components/Login/RequireAUth';
 import About from './Components/Pages/About/About';
+import Charts from './Components/Pages/Dashboard/Chart/Charts';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
 import EditProfile from './Components/Pages/Dashboard/Profile/EditProfile';
 import Profile from './Components/Pages/Dashboard/Profile/Profile';
@@ -28,6 +29,7 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={<Home />}></Route>
+        <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/createAccount" element={<CreateAccount />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/about" element={<About />}></Route>
@@ -43,7 +45,9 @@ function App() {
             </RequireAuth>
           }
         >
-          <Route index element={<Profile />} />
+          <Route index element={<Charts />} />
+
+          <Route path="profile" element={<Profile />} />
           <Route path="editProfile" element={<EditProfile />} />
         </Route>
         {/* dashboard end */}

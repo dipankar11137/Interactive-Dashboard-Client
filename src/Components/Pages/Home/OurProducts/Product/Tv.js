@@ -10,7 +10,7 @@ const Tv = () => {
       .then(data => setProducts(data));
   }, [products]);
   return (
-    <div className="mt-10">
+    <div id="tv" className="mt-10">
       <h1 className="my-5 text-3xl">Tv Products</h1>
       <div
         data-aos="fade-down"

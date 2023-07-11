@@ -133,7 +133,9 @@ const Navbar = () => {
               <option disabled selected>
                 All Categories
               </option>
-              <option>TV</option>
+              <option>
+                <Link href="home#tv"> TV</Link>
+              </option>
               <option>Headphone</option>
               <option>Computer Accessories </option>
               <option>Mobile </option>
