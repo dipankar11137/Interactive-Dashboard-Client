@@ -13,6 +13,9 @@ import NotFound from './Components/Share/NotFound';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import About from './Components/Pages/About/About';
+import Dashboard from './Components/Pages/Dashboard/Dashboard';
+import EditProfile from './Components/Pages/Dashboard/Profile/EditProfile';
+import Profile from './Components/Pages/Dashboard/Profile/Profile';
 AOS.init();
 
 function App() {
@@ -29,6 +32,13 @@ function App() {
         <Route path="/about" element={<About />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/*" element={<NotFound />}></Route>
+
+        {/* dashboard Start */}
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route index element={<Profile />} />
+          <Route path="editProfile" element={<EditProfile />} />
+        </Route>
+        {/* dashboard end */}
       </Routes>
 
       <ToastContainer />
