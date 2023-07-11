@@ -12,6 +12,7 @@ import NotFound from './Components/Share/NotFound';
 // aos
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import RequireAuth from './Components/Login/RequireAUth';
 import About from './Components/Pages/About/About';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
 import EditProfile from './Components/Pages/Dashboard/Profile/EditProfile';
@@ -34,7 +35,14 @@ function App() {
         <Route path="/*" element={<NotFound />}></Route>
 
         {/* dashboard Start */}
-        <Route path="/dashboard" element={<Dashboard />}>
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
           <Route index element={<Profile />} />
           <Route path="editProfile" element={<EditProfile />} />
         </Route>

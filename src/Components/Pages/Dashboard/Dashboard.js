@@ -1,16 +1,29 @@
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { AiOutlineHeart, AiOutlineUser } from 'react-icons/ai';
+import { BiEdit } from 'react-icons/bi';
 import { FiFolder, FiMessageSquare, FiShoppingCart } from 'react-icons/fi';
-import { MdOutlineDashboard } from 'react-icons/md';
 import { RiSettings4Line } from 'react-icons/ri';
 import { TbReportAnalytics } from 'react-icons/tb';
 import { Link, Outlet } from 'react-router-dom';
+import auth from '../../../firebase.init';
 
 const Dashboard = () => {
+  const [user] = useAuthState(auth);
+  console.log(user.email);
+  const email = user.email;
   const menus = [
-    { name: 'dashboard', link: '/dashboard', icon: MdOutlineDashboard },
-    { name: 'user', link: '/dashboard/profile', icon: AiOutlineUser },
-    { name: 'messages', link: '/dashboard/editProfile', icon: FiMessageSquare },
+    { name: 'Profile', link: '/dashboard', icon: AiOutlineUser },
+    {
+      name: 'Edit Profile',
+      link: '/dashboard/editProfile',
+      icon: BiEdit,
+    },
+    {
+      name: 'My Booking ',
+      link: '/dashboard/editProfile',
+      icon: FiMessageSquare,
+    },
     { name: 'analytics', link: '/', icon: TbReportAnalytics },
     { name: 'File Manager', link: '/', icon: FiFolder },
     { name: 'Cart', link: '/', icon: FiShoppingCart },
@@ -57,7 +70,7 @@ const Dashboard = () => {
                 </div>
 
                 <div className="mt-4 flex flex-col gap-4 relative">
-                  {menus?.map((menu, i) => (
+                  {/* {menus?.map((menu, i) => (
                     <Link
                       to={menu?.link}
                       key={i}
@@ -78,15 +91,45 @@ const Dashboard = () => {
                       >
                         {menu?.name}
                       </h2>
-                      <h2
-                        className={`${
-                          open && 'hidden'
-                        } absolute  left-48 bg-white text-2xl font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit  `}
-                      >
-                        {menu?.name}
-                      </h2>
+                      
                     </Link>
-                  ))}
+                  ))} */}
+
+                  <Link
+                    to="/dashboard"
+                    className={`  group flex items-center text-xl  gap-3.5 font-medium p-2 hover:bg-primary rounded-md`}
+                  >
+                    <div>
+                      {React.createElement(AiOutlineUser, { size: '20' })}
+                    </div>
+                    <h2
+                      style={{
+                        transitionDelay: `${0 + 3}00ms`,
+                      }}
+                      className={`whitespace-pre duration-500 ${
+                        !open && 'opacity-0 translate-x-28 overflow-hidden '
+                      }`}
+                    >
+                      Profile
+                    </h2>
+                  </Link>
+
+                  <Link
+                    to="/dashboard/editProfile"
+                    className={`  group flex items-center text-xl  gap-3.5 font-medium p-2 hover:bg-primary rounded-md`}
+                  >
+                    <div>{React.createElement(BiEdit, { size: '20' })}</div>
+                    <h2
+                      style={{
+                        transitionDelay: `${0 + 3}00ms`,
+                      }}
+                      className={`whitespace-pre duration-500 ${
+                        !open && 'opacity-0 translate-x-28 overflow-hidden '
+                      }`}
+                    >
+                      Edit Profile
+                    </h2>
+                  </Link>
                 </div>
               </div>
             </section>
