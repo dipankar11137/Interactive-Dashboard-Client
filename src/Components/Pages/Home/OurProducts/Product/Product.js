@@ -1,24 +1,35 @@
 import React from 'react';
+import '../../../../CSS/ImageStyle.css';
 import '../../../../CSS/Product.css';
 
-const Product = () => {
+const Product = ({ product, handleBuy }) => {
   return (
-    <div className="card w-60 glass">
+    <div className="card w-60 glass shadow-xl hover:shadow-2xl hover:shadow-blue-800 cursor-pointer">
       <figure>
         <img
-          className="h-44 "
-          src="https://www.pngmart.com/files/22/iPhone-14-PNG-Transparent.png"
+          className=" pic-style h-44  cursor-pointer"
+          src={product?.img}
           alt="product"
         />
       </figure>
       <div className="card-body ">
-        <h1 className="text-center">Life hack</h1>
-        <h2 className=" text-center text-xl font-bold">160000 BDT</h2>
+        <h1 className="text-center">{product?.name}</h1>
+        <h2 className=" text-center text-xl font-bold">{product?.price} BDT</h2>
 
-        <div className="card-actions justify-center">
-          <button className="px-4 py-2 rounded-lg bg-neutral text-white hover:btn-primary mt-2 uppercase">
-            Add To Cart
-          </button>
+        <div className=" flex  justify-center items-center gap-1">
+          {product?.quantity > 0 ? (
+            <button
+              onClick={() => handleBuy(product?._id)}
+              className="px-4 py-2 rounded-lg bg-neutral text-white hover:btn-primary mt-2 uppercase"
+            >
+              buy it now
+            </button>
+          ) : (
+            <h1 className="text-red-600 text-xl  font-bold mt-3">
+              {' '}
+              Out Of Stock
+            </h1>
+          )}
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 const AddItem = () => {
   // const [user] = useAuthState(auth);
   // const email = user?.email;
-  const [service, setService] = useState('');
+  const [category, setCategory] = useState('');
   const imageHostKey = '39899c0cdbfbe66a2dbde3818a91832c';
 
   const {
@@ -27,7 +27,7 @@ const AddItem = () => {
       .then(res => res.json())
       .then(imageData => {
         const image = imageData.data.url;
-        const changeUrl = { ...data, service: service, img: image };
+        const changeUrl = { ...data, category: category, img: image };
         console.log(changeUrl);
         fetch(`http://localhost:5000/allProduct`, {
           method: 'POST',
@@ -66,7 +66,7 @@ const AddItem = () => {
               </h1>
             </div>
             <select
-              onChange={e => setService(e.target.value)}
+              onChange={e => setCategory(e.target.value)}
               className="select select-primary w-96 max-w-xs text-lg"
             >
               <option disabled selected>
@@ -198,7 +198,7 @@ const AddItem = () => {
               )}
             </label>
 
-            {service ? (
+            {category ? (
               <input
                 className="btn mt-5 w-full disable text-white"
                 type="submit"

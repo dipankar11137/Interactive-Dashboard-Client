@@ -5,9 +5,9 @@ const Computer = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch('products.json')
-      .then(res => res.json())
-      .then(data => setProducts(data));
+  fetch(`http://localhost:5000/allProduct`)
+    .then(res => res.json())
+    .then(data => setProducts(data));
   }, [products]);
   return (
     <div className="mt-10">

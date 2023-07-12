@@ -19,7 +19,7 @@ const CustomerReview = () => {
     );
   };
   return (
-    <div className="bg-slate-100 w-[250px] p-3 rounded-lg pb-[400px]">
+    <div className="bg-slate-100 w-[250px] p-3 rounded-lg pb-[200px]">
       <h1 className="uppercase text-xl font-semibold">Customer review</h1>
       <div className="flex gap-2 mt-2">
         <div className="rating rating-sm mt-1">
