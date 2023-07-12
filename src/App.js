@@ -19,6 +19,7 @@ import Charts from './Components/Pages/Dashboard/Chart/Charts';
 import Contacts from './Components/Pages/Dashboard/Contacts/Contacts ';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
 import ManageProducts from './Components/Pages/Dashboard/Manage Product/ManageProducts';
+import MyBookings from './Components/Pages/Dashboard/My Booking/MyBookings';
 import EditProfile from './Components/Pages/Dashboard/Profile/EditProfile';
 import Profile from './Components/Pages/Dashboard/Profile/Profile';
 AOS.init();
@@ -52,6 +53,7 @@ function App() {
 
           <Route path="profile" element={<Profile />} />
           <Route path="editProfile" element={<EditProfile />} />
+          <Route path="myBooking" element={<MyBookings />} />
           <Route path="addProduct" element={<AddItem />} />
           <Route path="manageProduct" element={<ManageProducts />} />
           <Route path="contact" element={<Contacts />} />
