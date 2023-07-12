@@ -3,10 +3,10 @@ import { toast } from 'react-toastify';
 import ManageProduct from './ManageProduct';
 
 const ManageProducts = () => {
-  const [bloods, setBloods] = useState([]);
+  const [bloods, setBloods] = useState([5]);
   const [singleBlood, setSingleBlood] = useState({});
   useEffect(() => {
-    fetch('http://localhost:5000/bloods')
+    fetch('products.json')
       .then(res => res.json())
       .then(data => setBloods(data));
   }, [bloods]);
