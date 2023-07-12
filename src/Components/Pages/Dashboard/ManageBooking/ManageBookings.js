@@ -5,11 +5,11 @@ import ManageBooking from './ManageBooking';
 const ManageBookings = () => {
   const [buys, setBuys] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/buyBlood`)
+    fetch(`http://localhost:5000/buyProducts`)
       .then(res => res.json())
       .then(data => setBuys(data));
   }, [buys]);
-
+  console.log(buys);
   const handleDelivered = id => {
     const updateDelivered = { delivered: true };
     fetch(`http://localhost:5000/buyBloodId/${id}`, {
@@ -49,8 +49,7 @@ const ManageBookings = () => {
             <tr className="text-center">
               <th className="text-sm">Index</th>
               <th className="text-sm">Name</th>
-              <th className="text-sm">Student Id</th>
-              <th className="text-sm">Blood Group</th>
+              <th className="text-sm">Product Name</th>
               <th className="text-sm">Quantity</th>
               <th className="text-sm">Total Price</th>
               <th className="text-sm">Date</th>
