@@ -22,6 +22,7 @@ import ManageBookings from './Components/Pages/Dashboard/ManageBooking/ManageBoo
 import MyBookings from './Components/Pages/Dashboard/My Booking/MyBookings';
 import EditProfile from './Components/Pages/Dashboard/Profile/EditProfile';
 import Profile from './Components/Pages/Dashboard/Profile/Profile';
+import BuyProducts from './Components/Pages/Home/Buy Products/BuyProducts';
 AOS.init();
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/createAccount" element={<CreateAccount />}></Route>
+        <Route path="/buy/:id" element={<BuyProducts />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/login" element={<Login />}></Route>
