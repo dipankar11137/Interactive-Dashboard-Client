@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { AiOutlineUser } from 'react-icons/ai';
 import { BiEdit } from 'react-icons/bi';
+import { BsFillCartCheckFill } from 'react-icons/bs';
+import { MdContactMail, MdOutlineLibraryAdd } from 'react-icons/md';
+import { RiFolderSettingsFill, RiLuggageCartFill } from 'react-icons/ri';
 import { Link, Outlet } from 'react-router-dom';
 import auth from '../../../firebase.init';
 
@@ -27,7 +30,7 @@ const Dashboard = () => {
             <section className="flex ">
               <div
                 className={` ${
-                  open ? 'w-52' : 'w-20 '
+                  open ? 'w-60' : 'w-20 '
                 } bg-green-900 h-screen p-5 text-white pt-8 relative duration-300`}
               >
                 <img
@@ -84,6 +87,102 @@ const Dashboard = () => {
                       }`}
                     >
                       Edit Profile
+                    </h2>
+                  </Link>
+                  <Link
+                    to="/dashboard/myBooking"
+                    className={`  group flex items-center text-xl  gap-3.5 font-medium p-2 hover:bg-primary rounded-md`}
+                  >
+                    <div>
+                      {React.createElement(BsFillCartCheckFill, { size: '20' })}
+                    </div>
+                    <h2
+                      style={{
+                        transitionDelay: `${0 + 3}00ms`,
+                      }}
+                      className={`whitespace-pre duration-500 ${
+                        !open && 'opacity-0 translate-x-28 overflow-hidden '
+                      }`}
+                    >
+                      My Booking
+                    </h2>
+                  </Link>
+                  <Link
+                    to="/dashboard/manageBooking"
+                    className={`  group flex items-center text-xl  gap-3.5 font-medium p-2 hover:bg-primary rounded-md`}
+                  >
+                    <div>
+                      {React.createElement(RiLuggageCartFill, { size: '20' })}
+                    </div>
+                    <h2
+                      style={{
+                        transitionDelay: `${0 + 3}00ms`,
+                      }}
+                      className={`whitespace-pre duration-500 ${
+                        !open && 'opacity-0 translate-x-28 overflow-hidden '
+                      }`}
+                    >
+                      Manage Booking
+                    </h2>
+                  </Link>
+                  <Link
+                    to="/dashboard/addProduct"
+                    className={`  group flex items-center text-xl  gap-3.5 font-medium p-2 hover:bg-primary rounded-md`}
+                  >
+                    <div>
+                      {React.createElement(MdOutlineLibraryAdd, {
+                        size: '24',
+                      })}
+                    </div>
+                    <h2
+                      style={{
+                        transitionDelay: `${0 + 3}00ms`,
+                      }}
+                      className={`whitespace-pre duration-500 ${
+                        !open && 'opacity-0 translate-x-28 overflow-hidden '
+                      }`}
+                    >
+                      Add Product
+                    </h2>
+                  </Link>
+                  <Link
+                    to="/dashboard/manageProduct"
+                    className={`  group flex items-center text-xl  gap-3.5 font-medium p-2 hover:bg-primary rounded-md`}
+                  >
+                    <div>
+                      {React.createElement(RiFolderSettingsFill, {
+                        size: '20',
+                      })}
+                    </div>
+                    <h2
+                      style={{
+                        transitionDelay: `${0 + 3}00ms`,
+                      }}
+                      className={`whitespace-pre duration-500 ${
+                        !open && 'opacity-0 translate-x-28 overflow-hidden '
+                      }`}
+                    >
+                      Manage Product
+                    </h2>
+                  </Link>
+                  <Link
+                    to="/dashboard/manageProduct"
+                    className={`  group flex items-center text-xl  gap-3.5 font-medium p-2 hover:bg-primary rounded-md`}
+                  >
+                    <div>
+                      {React.createElement(MdContactMail, {
+                        size: '20',
+                      })}
+                    </div>
+                    <h2
+                      style={{
+                        transitionDelay: `${0 + 3}00ms`,
+                      }}
+                      className={`whitespace-pre duration-500 ${
+                        !open && 'opacity-0 translate-x-28 overflow-hidden '
+                      }`}
+                    >
+                      Manage Contact
                     </h2>
                   </Link>
                 </div>
