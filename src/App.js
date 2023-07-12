@@ -14,9 +14,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import RequireAuth from './Components/Login/RequireAUth';
 import About from './Components/Pages/About/About';
+import AddItem from './Components/Pages/Dashboard/Add Product/AddItem';
 import Charts from './Components/Pages/Dashboard/Chart/Charts';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
-import AddItem from './Components/Pages/Dashboard/Manage Items/AddItem';
+import ManageProducts from './Components/Pages/Dashboard/Manage Product/ManageProducts';
 import EditProfile from './Components/Pages/Dashboard/Profile/EditProfile';
 import Profile from './Components/Pages/Dashboard/Profile/Profile';
 AOS.init();
@@ -51,6 +52,7 @@ function App() {
           <Route path="profile" element={<Profile />} />
           <Route path="editProfile" element={<EditProfile />} />
           <Route path="addProduct" element={<AddItem />} />
+          <Route path="manageProduct" element={<ManageProducts />} />
         </Route>
         {/* dashboard end */}
       </Routes>
