@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { FaHandPointRight } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 const AddItem = () => {
   // const [user] = useAuthState(auth);
@@ -14,32 +16,32 @@ const AddItem = () => {
     reset,
   } = useForm();
   const onSubmit = data => {
-    // const image = data.image[0];
-    // const formData = new FormData();
-    // formData.append('image', image);
-    // const url = `https://api.imgbb.com/1/upload?expiration=600&key=${imageHostKey}`;
-    // fetch(url, {
-    //   method: 'POST',
-    //   body: formData,
-    // })
-    //   .then(res => res.json())
-    //   .then(imageData => {
-    //     const image = imageData.data.url;
-    //     const changeUrl = { ...data, service: service, img: image };
-    //     console.log(changeUrl);
-    //     fetch(`http://localhost:5000/allServices`, {
-    //       method: 'POST',
-    //       headers: {
-    //         'content-type': 'application/json',
-    //       },
-    //       body: JSON.stringify(changeUrl),
-    //     })
-    //       .then(res => res.json())
-    //       .then(data => {
-    //         toast.success('Successfully Add This ');
-    //         reset();
-    //       });
-    //   });
+    const image = data.image[0];
+    const formData = new FormData();
+    formData.append('image', image);
+    const url = `https://api.imgbb.com/1/upload?expiration=600&key=${imageHostKey}`;
+    fetch(url, {
+      method: 'POST',
+      body: formData,
+    })
+      .then(res => res.json())
+      .then(imageData => {
+        const image = imageData.data.url;
+        const changeUrl = { ...data, service: service, img: image };
+        console.log(changeUrl);
+        fetch(`http://localhost:5000/allProduct`, {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify(changeUrl),
+        })
+          .then(res => res.json())
+          .then(data => {
+            toast.success('Successfully Add A Product');
+            reset();
+          });
+      });
   };
   return (
     <div className=" pb-20">
@@ -51,7 +53,18 @@ const AddItem = () => {
           className=" flex justify-center gap-4"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <div className="mt-48 pr-20 ">
+          <div className="mt-32 pr-20 ">
+            <div className="mb-10 flex">
+              <FaHandPointRight
+                data-aos="fade-right"
+                data-aos-offset="500"
+                data-aos-easing="ease-in-sine"
+                className="text-3xl text-red-600"
+              />
+              <h1 className="text-2xl font-bold uppercase text-blue-900 ml-5">
+                Add a product
+              </h1>
+            </div>
             <select
               onChange={e => setService(e.target.value)}
               className="select select-primary w-96 max-w-xs text-lg"
@@ -74,7 +87,7 @@ const AddItem = () => {
             </label>
             <input
               type="text"
-              placeholder="Service name"
+              placeholder="Product name"
               className="input h-[40px] input-bordered bg-white lg:w-96 sm:w-full max-w-xs hover:shadow-xl shadow-inner border-blue-900 "
               {...register('name', {
                 required: {
