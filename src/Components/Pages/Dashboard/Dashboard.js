@@ -38,18 +38,21 @@ const Dashboard = () => {
                   alt=""
                 />
                 <div className="flex gap-x-4 items-center">
-                  <img
-                    src="https://www.svgrepo.com/download/7869/settings.svg"
-                    className={`cursor-pointer duration-500 rounded-full ${
-                      open && 'rotate-[360deg] h-20  '
-                    }`}
-                    alt=""
-                  />
+                  <Link to={'/dashboard'}>
+                    {' '}
+                    <img
+                      src="https://www.svgrepo.com/download/7869/settings.svg"
+                      className={`cursor-pointer duration-500 rounded-full ${
+                        open && 'rotate-[360deg] h-20  '
+                      }`}
+                      alt=""
+                    />
+                  </Link>
                 </div>
 
                 <div className="mt-4 flex flex-col gap-4 relative">
                   <Link
-                    to="/dashboard"
+                    to="/dashboard/profile"
                     className={`  group flex items-center text-xl  gap-3.5 font-medium p-2 hover:bg-primary rounded-md`}
                   >
                     <div>

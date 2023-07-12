@@ -15,7 +15,7 @@ const Header = () => {
         {' '}
         <Link to="/">
           {' '}
-          <h1 className="text-4xl font-extrabold uppercase">
+          <h1 className="text-3xl font-extrabold uppercase">
             Elec<span className="text-primary">tro</span> Li
             <span className="text-primary italic">gh</span>t
           </h1>
