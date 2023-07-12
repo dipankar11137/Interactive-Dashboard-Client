@@ -42,22 +42,22 @@ const ManageBookings = () => {
   };
   return (
     <div>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto p-2">
         <table className="table w-full">
           {/* head */}
           <thead>
             <tr className="text-center">
-              <th className="text-xl">Index</th>
-              <th className="text-xl">Name</th>
-              <th className="text-xl">Student Id</th>
-              <th className="text-xl">Blood Group</th>
-              <th className="text-xl">Quantity</th>
-              <th className="text-xl">Total Price</th>
-              <th className="text-xl">Date</th>
-              <th className="text-xl">Phone</th>
-              <th className="text-xl">Address</th>
-              <th className="text-xl">Delivered</th>
-              <th className="text-xl">Delete</th>
+              <th className="text-sm">Index</th>
+              <th className="text-sm">Name</th>
+              <th className="text-sm">Student Id</th>
+              <th className="text-sm">Blood Group</th>
+              <th className="text-sm">Quantity</th>
+              <th className="text-sm">Total Price</th>
+              <th className="text-sm">Date</th>
+              <th className="text-sm">Phone</th>
+              <th className="text-sm">Address</th>
+              <th className="text-sm">Delivered</th>
+              <th className="text-sm">Delete</th>
             </tr>
           </thead>
           <tbody className="text-center">

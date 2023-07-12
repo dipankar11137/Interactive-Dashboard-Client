@@ -51,7 +51,14 @@ const Login = () => {
       <div className="flex justify-center mt-5 ">
         <div className="card w-96 shadow-2xl shadow-blue-900 bg-violet-50">
           <div className="card-body">
-            <h2 className="text-center text-2xl">Login</h2>
+            <div className="flex justify-center">
+              <img
+                className="w-24 h-20 "
+                src="https://cdn.pixabay.com/animation/2022/12/20/03/45/03-45-09-865_512.gif"
+                alt=""
+              />
+            </div>
+            {/* <h2 className="text-center text-2xl">Login</h2> */}
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="form-control w-full max-w-xs">
                 <label className="label">
@@ -133,13 +140,13 @@ const Login = () => {
                 </Link>
               </small>
             </p>
-            <div className="divider">OR</div>
+            {/* <div className="divider">OR</div>
             <button
               onClick={() => signInWithGoogle()}
               className="btn btn-outline font-black"
             >
               Continue With Google
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

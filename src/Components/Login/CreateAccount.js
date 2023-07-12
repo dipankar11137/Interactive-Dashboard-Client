@@ -54,11 +54,18 @@ const CreateAccount = () => {
     navigate('/');
   };
   return (
-    <div className="flex justify-center h-screen ">
-      <div className="flex h-screen justify-center items-center  ">
+    <div className="flex justify-center  ">
+      <div className="flex  justify-center  ">
         <div className="card w-96 shadow-2xl bg-violet-50 shadow-blue-900">
           <div className="card-body">
-            <h2 className="text-center text-2xl font-bold">SignUp</h2>
+            <div className="flex justify-center">
+              <img
+                className="h-20 w-24 rounded-full"
+                src="https://media1.giphy.com/media/H8PwsuScvqKYq09stn/giphy.gif"
+                alt=""
+              />
+            </div>
+            {/* <h2 className="text-center text-2xl font-bold">SignUp</h2> */}
 
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="form-control w-full max-w-xs">
@@ -116,6 +123,40 @@ const CreateAccount = () => {
                   )}
                 </label>
               </div>
+              {/* phone */}
+              <div className="form-control w-full max-w-xs">
+                <label className="label">
+                  <span className="label-text">Phone</span>
+                </label>
+                <input
+                  type="phone"
+                  placeholder="Phone"
+                  className="input input-bordered bg-white w-full max-w-xs"
+                  {...register('phone', {
+                    required: {
+                      value: true,
+                      message: 'Phone is Required',
+                    },
+                    minLength: {
+                      value: 11,
+                      message: 'Phone Must be 11 characters ',
+                    },
+                  })}
+                />
+                <label className="label">
+                  {errors.phone?.type === 'required' && (
+                    <span className="label-text-alt text-red-500">
+                      {errors.phone.message}
+                    </span>
+                  )}
+                  {errors.phone?.type === 'minLength' && (
+                    <span className="label-text-alt text-red-500">
+                      {errors.phone.message}
+                    </span>
+                  )}
+                </label>
+              </div>
+              {/* password */}
               <div className="form-control w-full max-w-xs">
                 <label className="label">
                   <span className="label-text">Password</span>
@@ -163,13 +204,13 @@ const CreateAccount = () => {
                 </Link>
               </small>
             </p>
-            <div className="divider">OR</div>
+            {/* <div className="divider">OR</div>
             <button
               onClick={() => signInWithGoogle()}
               className="btn btn-outline font-black "
             >
               Continue With Google
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
