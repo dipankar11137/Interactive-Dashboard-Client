@@ -54,12 +54,17 @@ const Header = () => {
             <h1 className="text-2xl ml-1 font-bold">Cart</h1>
           </div>
           <div className="ml-5">
-            {' '}
-            <img
-              className=" w-10 h-10 indicator-item indicator-center rounded-full"
-              src={dbUser[0]?.image || profilePic}
-              alt=""
-            />
+            {authUser && (
+              <div className="avatar online">
+                <div className="w-10 rounded-full">
+                  <img
+                    className=" w-10 h-10 indicator-item indicator-center rounded-full"
+                    src={dbUser[0]?.image || profilePic}
+                    alt=""
+                  />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
