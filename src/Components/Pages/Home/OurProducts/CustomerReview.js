@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import sam from '../../../../Images/Background/sam-removebg-preview.png';
 
 const CustomerReview = () => {
   var isChecked;
@@ -346,7 +345,7 @@ const CustomerReview = () => {
           <div>
             {' '}
             <h1>Samsung Galaxy F62 (Laser Grey, 128 GB) (6 GB RAM)</h1>
-            <h1 className="font-bold"> $12,990.00</h1>
+            <h1 className="font-bold"> $790.00</h1>
           </div>
         </div>
         <div
@@ -354,13 +353,15 @@ const CustomerReview = () => {
           data-aos-duration="3000"
           className=" flex mt-10"
         >
-          <img className="h-20 mt-5" src={sam} alt="" />
+          <img
+            className="h-20 w-20 mt-5"
+            src="https://i.ibb.co/WyBVx9L/151-1512944-red-headphone-png-image-background-beats-by-dr.jpg"
+            alt=""
+          />
           <div>
             {' '}
-            <h1>
-              Samsung 192 L Direct Cool Single Door 3 Star (2021) Refrigerator
-            </h1>
-            <h1 className="font-bold"> $12,499.00</h1>
+            <h1>Apple Headphone, Its sound quality is very good.</h1>
+            <h1 className="font-bold"> $1299.00</h1>
           </div>
         </div>
       </div>

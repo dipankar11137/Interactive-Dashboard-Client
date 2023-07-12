@@ -10,10 +10,10 @@ const ManageProduct = ({
   handleDecrease,
 }) => {
   return (
-    <tr className="font-bold text-xl">
+    <tr className="font-bold text-sm">
       <th>{index}</th>
       <td>
-        <img className="w-24 h-24" src={blood?.img} alt="" />
+        <img className="w-14 h-14" src={blood?.img} alt="" />
       </td>
       <td>{blood?.name}</td>
       <td>{blood?.price}</td>
@@ -26,7 +26,7 @@ const ManageProduct = ({
           for="my-modal-3"
           className="btn bg-secondary text-white  modal-button"
         >
-          <FaEdit className="text-2xl" />
+          <FaEdit className="text-md" />
         </label>
 
         <input type="checkbox" id="my-modal-3" className="modal-toggle" />
@@ -117,6 +117,9 @@ const ManageProduct = ({
         </div>
       </td>
       {/* modal end */}
+      <td>
+        <button className="btn btn-secondary btn-sm">Delete</button>
+      </td>
     </tr>
   );
 };

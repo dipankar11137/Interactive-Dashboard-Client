@@ -6,7 +6,7 @@ const ManageProducts = () => {
   const [bloods, setBloods] = useState([5]);
   const [singleBlood, setSingleBlood] = useState({});
   useEffect(() => {
-    fetch('products.json')
+    fetch('http://localhost:5000/allProduct')
       .then(res => res.json())
       .then(data => setBloods(data));
   }, [bloods]);
@@ -62,20 +62,20 @@ const ManageProducts = () => {
     }
   };
   return (
-    <div>
+    <div className="mb-20">
       <div className="overflow-x-auto p-2">
         <table className="table w-full">
           {/* head */}
           <thead>
             <tr className="text-center">
-              <th className="text-lg">Index</th>
-              <th className="text-lg">Image</th>
-              <th className="text-lg">Name</th>
-              <th className="text-lg">Price</th>
-              <th className="text-lg">Quantity</th>
-              <th className="text-lg">Increase Quantity</th>
-              <th className="text-lg">Decrease</th>
-              <th className="text-lg">Delete</th>
+              <th className="text-sm">Index</th>
+              <th className="text-sm">Image</th>
+              <th className="text-sm">Name</th>
+              <th className="text-sm">Price</th>
+              <th className="text-sm">Quantity</th>
+              <th className="text-sm">Increase Quantity</th>
+              <th className="text-sm">Decrease</th>
+              <th className="text-sm">Delete</th>
             </tr>
           </thead>
           <tbody className="text-center">
