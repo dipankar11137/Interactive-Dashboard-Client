@@ -11,6 +11,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
+import RadialProgress from './RadialProgress';
 
 const Charts = () => {
   // const data = [{ name: 'Page A', uv: 400, pv: 2400, amt: 2400 }];
@@ -25,8 +26,8 @@ const Charts = () => {
   // Line Chart
   const renderLineChart = (
     <LineChart
-      width={800}
-      height={400}
+      width={600}
+      height={300}
       data={data}
       margin={{ top: 15, right: 60, bottom: 15, left: 80 }}
     >
@@ -41,7 +42,7 @@ const Charts = () => {
   const renderBarChart = (
     <BarChart
       width={1000}
-      height={400}
+      height={500}
       data={data}
       margin={{ top: 15, right: 10, bottom: 15, left: 80 }}
     >
@@ -55,8 +56,8 @@ const Charts = () => {
 
   const areaChart = (
     <AreaChart
-      width={930}
-      height={400}
+      width={530}
+      height={300}
       data={data}
       margin={{ top: 15, right: 30, left: 90, bottom: 15 }}
     >
@@ -90,15 +91,32 @@ const Charts = () => {
       />
     </AreaChart>
   );
-  return (
-    <div className="container mt-5">
-      <h1 className="fw-bold mb-3">Month Vs Sells</h1>
-      <h1 className="bar-style shadow-lg mb-5"> {renderLineChart}</h1>
-      <h1 className="mt-3 fw-bold">Investment vs Revenue</h1>
-      <h1 className="bar-style shadow-lg mt-5">{renderBarChart}</h1>
-      <h1 className="mt-3 fw-bold">Month vs Investment & Revenue</h1>
-      <h1 className="bar-style shadow-lg mt-5">{areaChart}</h1>
 
+  // Radio Progress
+  const [progress, setProgress] = useState(true);
+
+  const toggleProgress = () => {
+    setProgress(!progress);
+  };
+  return (
+    <div className="container mt-5 ml-10 mb-40">
+      <div className="flex  gap-6">
+        <div>
+          <h1 className="mt-3 fw-bold">Month vs Investment & Revenue</h1>
+          <h1 className="bar-style shadow-lg mt-5">{areaChart}</h1>
+        </div>
+        <div className="mt-7">
+          <h1 className="fw-bold ">Month Vs Sells</h1>
+          <h1 className="  shadow-lg mb-5 "> {renderLineChart}</h1>
+        </div>
+      </div>
+      <div>
+        <h1 className="mt-3 fw-bold">Investment vs Revenue</h1>
+        <h1 className="bar-style shadow-lg mt-5">{renderBarChart}</h1>
+      </div>
+      <div>
+        <RadialProgress />
+      </div>
       <div className="p-5"></div>
     </div>
   );
