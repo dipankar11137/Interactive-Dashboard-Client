@@ -166,7 +166,7 @@ const Dashboard = () => {
                     </h2>
                   </Link>
                   <Link
-                    to="/dashboard/manageProduct"
+                    to="/dashboard/contact"
                     className={`  group flex items-center text-xl  gap-3.5 font-medium p-2 hover:bg-primary rounded-md`}
                   >
                     <div>

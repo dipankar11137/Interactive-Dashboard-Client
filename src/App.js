@@ -16,6 +16,7 @@ import RequireAuth from './Components/Login/RequireAUth';
 import About from './Components/Pages/About/About';
 import AddItem from './Components/Pages/Dashboard/Add Product/AddItem';
 import Charts from './Components/Pages/Dashboard/Chart/Charts';
+import Contacts from './Components/Pages/Dashboard/Contacts/Contacts ';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
 import ManageProducts from './Components/Pages/Dashboard/Manage Product/ManageProducts';
 import EditProfile from './Components/Pages/Dashboard/Profile/EditProfile';
@@ -53,6 +54,7 @@ function App() {
           <Route path="editProfile" element={<EditProfile />} />
           <Route path="addProduct" element={<AddItem />} />
           <Route path="manageProduct" element={<ManageProducts />} />
+          <Route path="contact" element={<Contacts />} />
         </Route>
         {/* dashboard end */}
       </Routes>

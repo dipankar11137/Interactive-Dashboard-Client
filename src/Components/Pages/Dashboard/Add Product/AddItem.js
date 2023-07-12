@@ -115,6 +115,28 @@ const AddItem = () => {
                 </span>
               )}
             </label>
+            {/* Quantity */}
+            <label className="">
+              <span className="label-text text-lg font-semibold">Quantity</span>
+            </label>
+            <input
+              type="number"
+              placeholder="Quantity"
+              className="input h-[40px] input-bordered bg-white w-full max-w-xs  hover:shadow-xl shadow-inner border-blue-900"
+              {...register('quantity', {
+                required: {
+                  value: true,
+                  message: 'Quantity is Required',
+                },
+              })}
+            />
+            <label className="label">
+              {errors.quantity?.type === 'required' && (
+                <span className="label-text-alt text-red-500">
+                  {errors?.quantity?.message}
+                </span>
+              )}
+            </label>
             {/* Price */}
             <label className="">
               <span className="label-text text-lg font-semibold">Price</span>
