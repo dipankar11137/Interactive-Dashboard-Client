@@ -79,27 +79,27 @@ const EditProfile = () => {
       const bio = data?.bio || user.bio;
       const image = user.photo;
 
-      // const updatedProfile = {
-      //   name,
-      //   birthday,
-      //   phone,
-      //   sex,
-      //   bio,
-      //   image,
-      // };
-      // fetch(`http://localhost:5000/create-user/${user?.email}`, {
-      //   method: 'PUT',
-      //   headers: {
-      //     'content-type': 'application/json',
-      //   },
-      //   body: JSON.stringify(updatedProfile),
-      // })
-      //   .then(res => res.json())
-      //   .then(data => {
-      //     toast.success('Profile Successfully Updated');
-      //     reset();
-      //     setEdit(false);
-      //   });
+      const updatedProfile = {
+        name,
+        birthday,
+        phone,
+        sex,
+        bio,
+        image,
+      };
+      fetch(`http://localhost:5000/create-user/${user?.email}`, {
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(updatedProfile),
+      })
+        .then(res => res.json())
+        .then(data => {
+          toast.success('Profile Successfully Updated');
+          reset();
+          setEdit(false);
+        });
     }
   };
   const profilePic =
