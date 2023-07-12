@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   useCreateUserWithEmailAndPassword,
+  useSignInWithEmailAndPassword,
   useSignInWithGoogle,
   useUpdateProfile,
 } from 'react-firebase-hooks/auth';
@@ -11,6 +12,7 @@ import auth from '../../firebase.init';
 
 const CreateAccount = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+
   const {
     register,
     formState: { errors },
@@ -19,6 +21,7 @@ const CreateAccount = () => {
 
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
+  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
 
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const navigate = useNavigate();
@@ -32,29 +35,29 @@ const CreateAccount = () => {
   }
 
   const createDBUser = (name, email) => {
-    // fetch(`https://boxberry.onrender.com/create-user/${email}`, {
-    //   method: "PUT",
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    //   body: JSON.stringify({ name, email }),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //   });
+    fetch(`http://localhost:5000/create-user/${email}`, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({ name, email }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        toast.success('Updated profile');
+        navigate('/');
+      });
   };
 
-  const onSubmit = data => {
+  const onSubmit = async data => {
     // console.log(data.email, data.password, data.name);
-    createUserWithEmailAndPassword(data.email, data.password);
-    updateProfile({ displayName: data.name });
-    createDBUser(data.name, data.email);
-    toast.success('Updated profile');
-    navigate('/');
+    await createUserWithEmailAndPassword(data.email, data.password);
+    await signInWithEmailAndPassword(data.email, data.password);
+    await updateProfile({ displayName: data.name });
+    await createDBUser(data.name, data.email);
   };
   return (
-    <div className="flex justify-center  ">
+    <div className="flex justify-center  mb-20">
       <div className="flex  justify-center  ">
         <div className="card w-96 shadow-2xl bg-violet-50 shadow-blue-900">
           <div className="card-body">
