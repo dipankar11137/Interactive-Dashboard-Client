@@ -7,7 +7,9 @@ import backgroundImage from '../../../Images/Background/bb.jpg';
 import headphone from '../../../Images/Background/headphone.png';
 import phone from '../../../Images/Background/mobile.png';
 import tv from '../../../Images/Background/tvc.png';
+import '../../CSS/ImageStyle.css';
 import '../../CSS/ReactSlider.css';
+
 
 const Banner = () => {
   const settings = {

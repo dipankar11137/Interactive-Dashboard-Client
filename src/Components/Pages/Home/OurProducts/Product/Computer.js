@@ -5,9 +5,9 @@ const Computer = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-  fetch(`http://localhost:5000/allProduct`)
-    .then(res => res.json())
-    .then(data => setProducts(data));
+    fetch(`http://localhost:5000/products/Computer Accessories`)
+      .then(res => res.json())
+      .then(data => setProducts(data));
   }, [products]);
   return (
     <div className="mt-10">
@@ -23,9 +23,12 @@ const Computer = () => {
         data-aos-anchor-placement="top-center"
         className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-3"
       >
-        {products.slice(0, 3).map(product => (
-          <Product key={product._id} product={product}></Product>
-        ))}
+        {products
+          .slice(0, 3)
+
+          .map(product => (
+            <Product key={product._id} product={product}></Product>
+          ))}
       </div>
     </div>
   );

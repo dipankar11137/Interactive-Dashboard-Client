@@ -78,7 +78,6 @@ const AddItem = () => {
               <option className="text-lg text-blue-900 ">TV</option>
               <option className="text-lg text-blue-900 ">Headphone</option>
               <option className="text-lg text-blue-900 ">Mobile</option>
-              <option className="text-lg text-blue-900 ">New Product</option>
             </select>
           </div>
           <div>
