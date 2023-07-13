@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import Footer from '../../Share/Footer';
 
 const Contact = () => {
@@ -10,20 +11,20 @@ const Contact = () => {
     reset,
   } = useForm();
   const onSubmit = data => {
-    // const updateData = { ...data };
-    // const url = `http://localhost:5000/contact`;
-    // fetch(url, {
-    //   method: 'POST',
-    //   headers: {
-    //     'content-type': 'application/json',
-    //   },
-    //   body: JSON.stringify(updateData),
-    // })
-    //   .then(res => res.json())
-    //   .then(result => {
-    //     toast.success('Successfully Submit ');
-    //     reset();
-    //   });
+    const updateData = { ...data };
+    const url = `http://localhost:5000/contact`;
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(updateData),
+    })
+      .then(res => res.json())
+      .then(result => {
+        toast.success('Successfully Submit ');
+        reset();
+      });
   };
   return (
     <div>
