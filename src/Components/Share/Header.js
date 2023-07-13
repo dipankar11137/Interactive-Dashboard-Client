@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { BsFillCartDashFill } from 'react-icons/bs';
+import { BsFillCartDashFill, BsHeartFill } from 'react-icons/bs';
 import { FaRegHeart } from 'react-icons/fa';
 import { ImSearch } from 'react-icons/im';
 import { Link } from 'react-router-dom';
@@ -8,6 +8,7 @@ import auth from '../../firebase.init';
 const Header = () => {
   const [authUser] = useAuthState(auth);
   const [dbUser, setDbUser] = useState([]);
+  const [heart, setHeart] = useState(false);
 
   useEffect(() => {
     fetch(`http://localhost:5000/user/${authUser?.email}`)
@@ -48,7 +49,18 @@ const Header = () => {
         </button>
 
         <div className="flex items-center ml-20 ">
-          <FaRegHeart className="text-2xl" />
+          {heart ? (
+            <FaRegHeart
+              onClick={() => setHeart(false)}
+              className="text-2xl cursor-pointer"
+            />
+          ) : (
+            <BsHeartFill
+              onClick={() => setHeart(true)}
+              className="text-2xl cursor-pointer text-red-600"
+            />
+          )}
+
           <div className="flex ml-10 ">
             <BsFillCartDashFill className="text-2xl mt-1" />
             <h1 className="text-2xl ml-1 font-bold">Cart</h1>
