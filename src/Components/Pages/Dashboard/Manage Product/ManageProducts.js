@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import ManageProduct from './ManageProduct';
 
 const ManageProducts = () => {
@@ -18,25 +19,25 @@ const ManageProducts = () => {
   };
 
   const handleRestock = event => {
-    setIncrease(false);
     event.preventDefault();
     const newQuantity =
       parseInt(event.target.quantity.value) + parseInt(singleProduct?.quantity);
-    console.log(event.target.quantity.value);
-    console.log('hello');
-    // const updateQuantity = { quantity: newQuantity };
-    // fetch(`http://localhost:5000/bloodId/${singleProduct?._id}`, {
-    //   method: 'PUT',
-    //   headers: {
-    //     'content-type': 'application/json',
-    //   },
-    //   body: JSON.stringify(updateQuantity),
-    // })
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     toast.success('Restock Is Successfully');
-    //     event.target.reset();
-    //   });
+    // console.log(newQuantity);
+
+    const updateQuantity = { quantity: newQuantity };
+    fetch(`http://localhost:5000/productId/${singleProduct?._id}`, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(updateQuantity),
+    })
+      .then(res => res.json())
+      .then(data => {
+        toast.success('Restock Is Successfully');
+        setIncrease(false);
+        event.target.reset();
+      });
   };
 
   const handleDecrease = event => {

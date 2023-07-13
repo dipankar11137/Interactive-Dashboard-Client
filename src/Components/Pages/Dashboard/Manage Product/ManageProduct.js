@@ -39,21 +39,23 @@ const ManageProduct = ({
           </div>
         )}
         {increase === `${product?._id}` && (
-          <form onSubmit={handleRestock}>
-            <input
-              type="number"
-              name="quantity"
-              id=""
-              placeholder="Enter a Number"
-              className="input h-[40px] w-[200px] input-bordered input-error hover:border-lime-500"
-            />
+          <div data-aos="zoom-in-left" data-aos-duration="1000">
+            <form onSubmit={handleRestock}>
+              <input
+                type="number"
+                name="quantity"
+                id=""
+                placeholder="Enter a Number"
+                className="input h-[40px] w-[200px] input-bordered input-error hover:border-lime-500"
+              />
 
-            <input
-              type="submit"
-              className=" ml-3 btn mt-2 btn-neutral pt-1 btn-sm text-white  font-bold rounded-lg"
-              value="Restock"
-            />
-          </form>
+              <input
+                type="submit"
+                className=" ml-3 btn mt-2 btn-neutral pt-1 btn-sm text-white  font-bold rounded-lg"
+                value="Restock"
+              />
+            </form>
+          </div>
         )}
       </td>
 
@@ -70,7 +72,7 @@ const ManageProduct = ({
           </div>
         )}
         {decrease === `${product?._id}` && (
-          <div>
+          <div data-aos="zoom-in-right" data-aos-duration="1000">
             <form onSubmit={handleDecrease}>
               <input
                 type="number"
