@@ -11,7 +11,7 @@ const MyBookings = () => {
   const [buys, setBuys] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    fetch(`http://localhost:5000/buyBlood/${email}`)
+    fetch(`http://localhost:5000/buyProduct/${email}`)
       .then(res => res.json())
       .then(data => setBuys(data));
   }, [buys, email]);
@@ -23,7 +23,7 @@ const MyBookings = () => {
   const handleRemove = id => {
     const proceed = window.confirm('Are You Sure ?');
     if (proceed) {
-      const url = `http://localhost:5000/buyBlood/${id}`;
+      const url = `http://localhost:5000/buyProduct/${id}`;
       fetch(url, {
         method: 'DELETE',
       })
@@ -44,8 +44,7 @@ const MyBookings = () => {
             <tr className="text-center">
               <th className="text-sm">Index</th>
               <th className="text-sm">Name</th>
-              <th className="text-sm">Student Id</th>
-              <th className="text-sm">Blood Group</th>
+
               <th className="text-sm">Quantity</th>
               <th className="text-sm">Total Price</th>
               <th className="text-sm">Date</th>

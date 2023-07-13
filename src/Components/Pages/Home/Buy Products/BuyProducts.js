@@ -29,32 +29,34 @@ const BuyProducts = () => {
     reset,
   } = useForm();
   const onSubmit = data => {
-    if (product?.quantity >= quantity) {
-      const changeUrl = {
-        ...data,
-        quantity,
-        totalPrice,
-        product,
-        email,
-        userName,
-      };
-      // console.log(changeUrl);
-      const url = `http://localhost:5000/buyProducts`;
-      fetch(url, {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify(changeUrl),
-      })
-        .then(res => res.json())
-        .then(result => {
-          toast.success('Successfully Buy This Products');
-          reset();
-        });
-    } else {
-      toast.error('This quantity is longer than available quantity');
-    }
+    console.log(product?.quantity, quantity);
+
+    // if (product?.quantity > quantity) {
+    const changeUrl = {
+      ...data,
+      quantity,
+      totalPrice,
+      product,
+      email,
+      userName,
+    };
+    // console.log(changeUrl);
+    const url = `http://localhost:5000/buyProducts`;
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(changeUrl),
+    })
+      .then(res => res.json())
+      .then(result => {
+        toast.success('Successfully Buy This Products');
+        reset();
+      });
+    // } else {
+    //   toast.error('This quantity is longer than available quantity');
+    // }
   };
   return (
     <div

@@ -1,12 +1,11 @@
 import React from 'react';
 
 const MyBooking = ({ buy, index, handleRemove, handlePayment }) => {
+  console.log(buy);
   return (
     <tr>
       <th>{index}</th>
-      <td>{buy?.user?.name}</td>
-      <td>{buy?.user?.studentId}</td>
-      <td>{buy?.bloodGroup}</td>
+      <td>{buy?.product?.name}</td>
       <td>{buy?.quantity}</td>
       <td>{buy?.totalPrice}</td>
       <td>{buy?.date}</td>

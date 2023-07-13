@@ -20,6 +20,7 @@ import Dashboard from './Components/Pages/Dashboard/Dashboard';
 import ManageProducts from './Components/Pages/Dashboard/Manage Product/ManageProducts';
 import ManageBookings from './Components/Pages/Dashboard/ManageBooking/ManageBookings';
 import MyBookings from './Components/Pages/Dashboard/My Booking/MyBookings';
+import Payment from './Components/Pages/Dashboard/My Booking/Payment/Payment';
 import EditProfile from './Components/Pages/Dashboard/Profile/EditProfile';
 import Profile from './Components/Pages/Dashboard/Profile/Profile';
 import BuyProducts from './Components/Pages/Home/Buy Products/BuyProducts';
@@ -37,6 +38,7 @@ function App() {
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/createAccount" element={<CreateAccount />}></Route>
         <Route path="/buy/:id" element={<BuyProducts />}></Route>
+        <Route path="/payment/:id" element={<Payment />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/login" element={<Login />}></Route>
