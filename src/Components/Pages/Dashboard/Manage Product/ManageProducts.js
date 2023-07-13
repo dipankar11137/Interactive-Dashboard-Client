@@ -68,6 +68,21 @@ const ManageProducts = () => {
       event.target.reset();
     }
   };
+  const handleDelete = id => {
+    const proceed = window.confirm('Are You Sure ?');
+    if (proceed) {
+      const url = `http://localhost:5000/product/${id}`;
+      fetch(url, {
+        method: 'DELETE',
+      })
+        .then(res => res.json())
+        .then(data => {
+          const remaining = products.filter(product => product._id !== id);
+          setProducts(remaining);
+          toast.success('Successfully Delete');
+        });
+    }
+  };
   return (
     <div className="mb-20">
       <div className="overflow-x-auto p-2">
@@ -99,6 +114,7 @@ const ManageProducts = () => {
                 setIncrease={setIncrease}
                 decrease={decrease}
                 setDecrease={setDecrease}
+                handleDelete={handleDelete}
               ></ManageProduct>
             ))}
           </tbody>

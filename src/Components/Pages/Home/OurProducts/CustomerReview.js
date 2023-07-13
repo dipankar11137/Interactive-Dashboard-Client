@@ -354,8 +354,8 @@ const CustomerReview = () => {
           className=" flex mt-10"
         >
           <img
-            className="h-20 w-20 mt-5"
-            src="https://i.ibb.co/WyBVx9L/151-1512944-red-headphone-png-image-background-beats-by-dr.jpg"
+            className="h-20 w-20 mt-5 mr-2"
+            src="https://pngimg.com/d/headphones_PNG101951.png"
             alt=""
           />
           <div>

@@ -7,12 +7,12 @@ const ManageProduct = ({
   product,
   handleRestock,
   handleEdit,
-  singleProduct,
   handleDecrease,
   increase,
   setIncrease,
   decrease,
   setDecrease,
+  handleDelete,
 }) => {
   return (
     <tr className="font-bold text-sm">
@@ -95,7 +95,10 @@ const ManageProduct = ({
       </td>
 
       <td>
-        <button className="w-20 h-10">
+        <button
+          onClick={() => handleDelete(product?._id)}
+          className="w-20 h-10"
+        >
           <img
             src="https://app.tryzulu.com/assets/static/images/delete-gif-dark-mode.gif"
             alt=""

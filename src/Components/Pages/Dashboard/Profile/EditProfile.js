@@ -12,7 +12,7 @@ const EditProfile = () => {
   const [updateSex, setSex] = useState('');
 
   const user = users[0];
-  const imageHostKey = '39899c0cdbfbe66a2dbde3818a91832c';
+  const imageHostKey = 'ab492fa3bd4253f25e449094e4b48480';
 
   const {
     register,
