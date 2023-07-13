@@ -10,7 +10,6 @@ import auth from '../../../firebase.init';
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
-  console.log(user.email);
 
   const [open, setOpen] = useState(false);
   return (
