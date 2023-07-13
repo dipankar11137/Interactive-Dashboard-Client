@@ -9,10 +9,10 @@ const ManageBookings = () => {
       .then(res => res.json())
       .then(data => setBuys(data));
   }, [buys]);
-  console.log(buys);
+
   const handleDelivered = id => {
     const updateDelivered = { delivered: true };
-    fetch(`http://localhost:5000/buyBloodId/${id}`, {
+    fetch(`http://localhost:5000/buyDelivered/${id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',
@@ -28,7 +28,7 @@ const ManageBookings = () => {
   const handleDelete = id => {
     const proceed = window.confirm('Are You Sure ?');
     if (proceed) {
-      const url = `http://localhost:5000/buyBlood/${id}`;
+      const url = `http://localhost:5000/buyProduct/${id}`;
       fetch(url, {
         method: 'DELETE',
       })

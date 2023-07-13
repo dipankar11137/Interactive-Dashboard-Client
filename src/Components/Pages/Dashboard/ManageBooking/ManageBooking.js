@@ -28,24 +28,44 @@ const ManageBooking = ({ index, buy, handleDelivered, handleDelete }) => {
             ) : (
               <button
                 onClick={() => handleDelivered(buy?._id)}
-                className="btn btn-primary  btn-sm text-white"
+                className="btn btn-natural  btn-sm text-white"
               >
                 Delivered
               </button>
             )}
           </>
         ) : (
-          <h1 className="text-xl text-primary font-extrabold">Not Paid</h1>
+          <h1 className="text-xl text-orange-700 font-extrabold">Not Paid</h1>
         )}
       </td>
       <td>
-        {' '}
-        <button
-          onClick={() => handleDelete(buy?._id)}
-          className="btn btn-primary  btn-sm text-white"
-        >
-          Delete
-        </button>
+        {buy?.payment ? (
+          <>
+            {buy?.delivered ? (
+              <button
+                onClick={() => handleDelete(buy?._id)}
+                className="btn btn-secondary  btn-sm text-white"
+              >
+                Delete
+              </button>
+            ) : (
+              <button
+                disabled
+                onClick={() => handleDelete(buy?._id)}
+                className="btn btn-secondary  btn-sm text-white"
+              >
+                Delete
+              </button>
+            )}
+          </>
+        ) : (
+          <button
+            onClick={() => handleDelete(buy?._id)}
+            className="btn btn-secondary  btn-sm text-white"
+          >
+            Delete
+          </button>
+        )}
       </td>
     </tr>
   );
