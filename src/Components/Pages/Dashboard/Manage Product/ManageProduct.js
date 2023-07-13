@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaEdit } from 'react-icons/fa';
+import { MdRemoveCircle } from 'react-icons/md';
 
 const ManageProduct = ({
   index,
@@ -9,6 +10,8 @@ const ManageProduct = ({
   singleBlood,
   handleDecrease,
 }) => {
+  const [increase, setIncrease] = useState(false);
+  const [decrease, setDecrease] = useState(false);
   return (
     <tr className="font-bold text-sm">
       <th>{index}</th>
@@ -19,104 +22,73 @@ const ManageProduct = ({
       <td>{blood?.price}</td>
       <td>{blood?.quantity}</td>
 
-      {/* modal start */}
       <td className="bg-rose-50">
-        <label
-          onClick={() => handleEdit(blood?._id)}
-          for="my-modal-3"
-          className="btn bg-secondary text-white  modal-button"
-        >
-          <FaEdit className="text-md" />
-        </label>
-
-        <input type="checkbox" id="my-modal-3" className="modal-toggle" />
-        <div className="modal">
-          <div className="modal-box relative">
-            <label
-              for="my-modal-3"
-              className="btn btn-primary pt-1 text-white  btn-sm btn-circle absolute right-2 top-2"
-            >
-              ✕
-            </label>
-            <div>
-              <div className="card w-96 bg-base-100 ">
-                <div className="card-body appleProducts-center text-center">
-                  <h1 className="text-2xl font-bold">
-                    Name : {singleBlood.name}
-                  </h1>
-                  <img
-                    className="mask mask-hexagon-2 "
-                    src={singleBlood?.img}
-                    alt=""
-                  />
-                  <form onSubmit={handleRestock}>
-                    <input
-                      type="number"
-                      name="quantity"
-                      id=""
-                      placeholder="Enter a Number"
-                      className="input input-bordered input-error hover:border-lime-500"
-                    />
-
-                    <input
-                      type="submit"
-                      className=" ml-3 btn mt-2 btn-primary pt-1 text-white  font-bold rounded-lg"
-                      value="Restock"
-                    />
-                  </form>
-                </div>
-              </div>
-            </div>
+        {increase ? (
+          <></>
+        ) : (
+          <div className="flex justify-center">
+            <FaEdit
+              onClick={() => setIncrease(true)}
+              className="text-2xl text-neutral cursor-pointer hover:text-primary"
+            />
           </div>
-        </div>
-      </td>
-      {/* modal end */}
-      <td className="bg-rose-50">
-        <label
-          onClick={() => handleEdit(blood?._id)}
-          for="my-modal-4"
-          className="btn bg-primary btn-sm text-white  modal-button"
-        >
-          Decrease
-        </label>
+        )}
+        {increase && (
+          <div>
+            <form onSubmit={handleRestock}>
+              <input
+                type="number"
+                name="quantity"
+                id=""
+                placeholder="Enter a Number"
+                className="input h-[40px] w-[200px] input-bordered input-error hover:border-lime-500"
+              />
 
-        <input type="checkbox" id="my-modal-4" className="modal-toggle" />
-        <div className="modal">
-          <div className="modal-box relative">
-            <label
-              for="my-modal-4"
-              className="btn btn-primary pt-1 text-white  btn-sm btn-circle absolute right-2 top-2"
-            >
-              ✕
-            </label>
-            <div>
-              <div className="card w-96 bg-base-100 ">
-                <div className="card-body appleProducts-center text-center">
-                  <h1 className="text-2xl font-bold">
-                    Name : {singleBlood.name}
-                  </h1>
-                  <form onSubmit={handleDecrease}>
-                    <input
-                      type="number"
-                      name="quantity"
-                      id=""
-                      placeholder="Enter a Number"
-                      className="input input-bordered input-error hover:border-lime-500"
-                    />
-
-                    <input
-                      type="submit"
-                      className=" ml-3 btn mt-2 btn-primary pt-1 text-white  font-bold rounded-lg"
-                      value="Decrease"
-                    />
-                  </form>
-                </div>
-              </div>
-            </div>
+              <input
+                onClick={() => setIncrease(false)}
+                type="submit"
+                className=" ml-3 btn mt-2 btn-neutral pt-1 btn-sm text-white  font-bold rounded-lg"
+                value="Restock"
+              />
+            </form>
           </div>
-        </div>
+        )}
       </td>
-      {/* modal end */}
+
+      <td className="bg-blue-50">
+        {' '}
+        {decrease ? (
+          <></>
+        ) : (
+          <div className="flex justify-center">
+            <MdRemoveCircle
+              onClick={() => setDecrease(true)}
+              className="text-3xl text-neutral cursor-pointer hover:text-primary"
+            />
+          </div>
+        )}
+        {decrease && (
+          <div>
+            <form onSubmit={handleDecrease}>
+              <input
+                type="number"
+                name="quantity"
+                id=""
+                placeholder="Enter a Number"
+                className="input h-[40px] w-[200px] input-bordered input-error hover:border-lime-500"
+              />
+
+              <input
+                onClick={() => setDecrease(false)}
+                type="submit"
+                className=" ml-3 btn mt-2 btn-neutral pt-1 btn-sm text-white  font-bold rounded-lg"
+                value="Decrease"
+              />
+            </form>
+          </div>
+        )}
+      </td>
+
       <td>
         <button className="btn btn-secondary btn-sm">Delete</button>
       </td>
