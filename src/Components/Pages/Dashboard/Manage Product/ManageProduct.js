@@ -64,12 +64,14 @@ const ManageProduct = ({
         {decrease === `${product?._id}` ? (
           <></>
         ) : (
-          <div className="flex justify-center">
-            <MdRemoveCircle
-              onClick={() => setDecrease(product?._id)}
-              className="text-3xl text-red-700 cursor-pointer hover:text-neutral"
-            />
-          </div>
+          <button onClick={() => handleEdit(product?._id)}>
+            <div className="flex justify-center">
+              <MdRemoveCircle
+                onClick={() => setDecrease(product?._id)}
+                className="text-3xl text-red-700 cursor-pointer hover:text-neutral"
+              />
+            </div>
+          </button>
         )}
         {decrease === `${product?._id}` && (
           <div data-aos="zoom-in-right" data-aos-duration="1000">
