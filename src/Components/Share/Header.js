@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { BsFillCartDashFill, BsHeartFill } from 'react-icons/bs';
 import { FaRegHeart } from 'react-icons/fa';
-import { ImSearch } from 'react-icons/im';
+import { ImCross, ImSearch } from 'react-icons/im';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import '../CSS/search-bar.css';
@@ -67,13 +67,23 @@ const Header = () => {
             value={searchQuery}
             onChange={handleSearch}
           />
-          <button
-            onClick={() => setSearchOpen(true)}
-            className="px-3 bg-primary pt-[6px] pb-4 rounded-r-lg "
-          >
-            {' '}
-            <ImSearch className="text-3xl pt-1 -mb-2 text-white hover:text-black" />
-          </button>
+          {searchOpen ? (
+            <button
+              onClick={() => setSearchOpen(false)}
+              className="px-3 bg-primary pt-[6px] pb-4 rounded-r-lg "
+            >
+              {' '}
+              <ImCross className="text-3xl pt-1 -mb-2 text-red-50 hover:text-red-600" />
+            </button>
+          ) : (
+            <button
+              onClick={() => setSearchOpen(true)}
+              className="px-3 bg-primary pt-[6px] pb-4 rounded-r-lg "
+            >
+              {' '}
+              <ImSearch className="text-3xl pt-1 -mb-2 text-white hover:text-black" />
+            </button>
+          )}
 
           <div className="flex items-center ml-20 ">
             {heart ? (
