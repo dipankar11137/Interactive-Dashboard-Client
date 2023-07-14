@@ -3,10 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import '../../../../CSS/ImageStyle.css';
 import '../../../../CSS/Product.css';
 
-const Product = ({ product }) => {
+const Product = ({ product, setSearchOpen }) => {
   const navigator = useNavigate();
   const handleBuy = id => {
     navigator(`/buy/${id}`);
+    setSearchOpen(false);
   };
   return (
     <div className="card w-60 glass shadow-xl hover:shadow-2xl hover:shadow-blue-800 cursor-pointer">
