@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../../firebase.init';
+import '../../../CSS/ChatBot.css';
 import ChatBot from '../Chat Bot/ChatBot';
 import MyBooking from './MyBooking';
 
@@ -39,6 +40,35 @@ const MyBookings = () => {
   return (
     <div>
       <div className="overflow-x-auto p-2">
+        <div className="flex justify-end ">
+          <div className="chat-bot-style  bottom-0">
+            <button>
+              <img
+                className="w-20 h-20"
+                src="https://icon-library.com/images/iphone-messenger-icon/iphone-messenger-icon-29.jpg"
+                alt=""
+              />
+            </button>
+          </div>
+        </div>
+        <div className=" flex justify-end mb-[20px] mr-11 ">
+          {' '}
+          <div className="flex ">
+            <div className="chat-bot-style flex">
+              <ChatBot />
+            </div>
+            <div className=" ml-72 pt-2 ">
+              <button className="w-10 h-10 chat-cross mt-6 -ml-2">
+                <img
+                  className="hover:cursor-pointer"
+                  src="https://static.vecteezy.com/system/resources/previews/018/887/462/original/signs-close-icon-png.png"
+                  alt=""
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+
         <table className="table w-full ">
           {/* head */}
           <thead>
@@ -68,7 +98,6 @@ const MyBookings = () => {
           </tbody>
         </table>
       </div>
-      <ChatBot />
     </div>
   );
 };

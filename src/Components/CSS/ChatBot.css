@@ -1,0 +1,11 @@
+.chat-bot-style{
+  position: fixed;
+  z-index: 1;
+  display: inline;
+  
+
+}
+.chat-cross{
+  position: fixed;
+  z-index: 1;
+}

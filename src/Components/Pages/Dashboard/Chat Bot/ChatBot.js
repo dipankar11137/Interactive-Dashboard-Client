@@ -7,8 +7,8 @@ import config from './config';
 
 const ChatBot = () => {
   return (
-    <div className="p-10">
-      <div>
+    <div className="p-10 ">
+      <div className="shadow-2xl">
         <Chatbot
           config={config}
           messageParser={MessageParser}
