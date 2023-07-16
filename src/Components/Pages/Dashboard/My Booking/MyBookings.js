@@ -40,6 +40,7 @@ const MyBookings = () => {
   };
   return (
     <div>
+      {/* chat Bot */}
       <div className="overflow-x-auto p-2">
         {chat ? (
           <></>

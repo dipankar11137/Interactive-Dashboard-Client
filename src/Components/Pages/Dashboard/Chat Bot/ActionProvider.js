@@ -2,7 +2,9 @@ import React from 'react';
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   const handleHello = () => {
-    const botMessage = createChatBotMessage('Hello. Nice to meet you.');
+    const botMessage = createChatBotMessage(
+      'Sir Please Contact Our Help Line. Our help line number +880 1931-117567'
+    );
 
     setState(prev => ({
       ...prev,
