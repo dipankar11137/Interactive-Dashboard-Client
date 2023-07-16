@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../../firebase.init';
+import ChatBot from '../Chat Bot/ChatBot';
 import MyBooking from './MyBooking';
 
 const MyBookings = () => {
@@ -67,6 +68,7 @@ const MyBookings = () => {
           </tbody>
         </table>
       </div>
+      <ChatBot />
     </div>
   );
 };
