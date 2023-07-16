@@ -108,7 +108,7 @@ const Dashboard = () => {
                   </Link>
                   <Link
                     to="/dashboard/manageBooking"
-                    className={`  group flex items-center text-xl  gap-3.5 font-medium p-2 hover:bg-primary rounded-md`}
+                    className={`  group flex items-center text-xl  gap-3.5 font-medium p-2 w-[215px] hover:bg-primary rounded-md`}
                   >
                     <div>
                       {React.createElement(RiLuggageCartFill, { size: '20' })}
@@ -146,7 +146,7 @@ const Dashboard = () => {
                   </Link>
                   <Link
                     to="/dashboard/manageProduct"
-                    className={`  group flex items-center text-xl  gap-3.5 font-medium p-2 hover:bg-primary rounded-md`}
+                    className={`  group flex items-center text-xl w-[215px]  gap-3.5 font-medium p-2 hover:bg-primary rounded-md`}
                   >
                     <div>
                       {React.createElement(RiFolderSettingsFill, {
@@ -158,7 +158,8 @@ const Dashboard = () => {
                         transitionDelay: `${0 + 3}00ms`,
                       }}
                       className={`whitespace-pre duration-500 ${
-                        !open && 'opacity-0 translate-x-28 overflow-hidden '
+                        !open &&
+                        'opacity-0 translate-x-28 overflow-hidden w-[215px]'
                       }`}
                     >
                       Manage Product
@@ -166,7 +167,7 @@ const Dashboard = () => {
                   </Link>
                   <Link
                     to="/dashboard/contact"
-                    className={`  group flex items-center text-xl  gap-3.5 font-medium p-2 hover:bg-primary rounded-md`}
+                    className={`  group flex items-center text-xl  w-[215px] gap-3.5 font-medium p-2 hover:bg-primary rounded-md`}
                   >
                     <div>
                       {React.createElement(MdContactMail, {
