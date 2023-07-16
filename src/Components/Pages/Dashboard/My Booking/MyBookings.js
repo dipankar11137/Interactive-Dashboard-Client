@@ -78,9 +78,20 @@ const MyBookings = () => {
             </div>
           </div>
         )}
+        <div>
+          {buys.map((buy, index) => (
+            <MyBooking
+              key={buy._id}
+              buy={buy}
+              index={index + 1}
+              handleRemove={handleRemove}
+              handlePayment={handlePayment}
+            ></MyBooking>
+          ))}
+        </div>
 
-        <table className="table w-full ">
-          {/* head */}
+        {/* <table className="table w-full ">
+        
           <thead>
             <tr className="text-center">
               <th className="text-sm">Index</th>
@@ -106,7 +117,7 @@ const MyBookings = () => {
               ></MyBooking>
             ))}
           </tbody>
-        </table>
+        </table> */}
       </div>
     </div>
   );
