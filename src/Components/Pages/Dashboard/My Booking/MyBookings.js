@@ -67,7 +67,7 @@ const MyBookings = () => {
               <div className=" ml-72 pt-2 ">
                 <button
                   onClick={() => setChat(false)}
-                  className="w-10 h-10 chat-cross mt-6 -ml-2"
+                  className="w-8 h-8 chat-cross mt-6 -ml-1"
                 >
                   <img
                     className="hover:cursor-pointer"
