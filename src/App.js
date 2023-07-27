@@ -37,8 +37,22 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/createAccount" element={<CreateAccount />}></Route>
-        <Route path="/buy/:id" element={<BuyProducts />}></Route>
-        <Route path="/payment/:id" element={<Payment />}></Route>
+        <Route
+          path="/buy/:id"
+          element={
+            <RequireAuth>
+              <BuyProducts />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/payment/:id"
+          element={
+            <RequireAuth>
+              <Payment />
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/login" element={<Login />}></Route>
