@@ -152,7 +152,7 @@ const Dashboard = () => {
                       onClick={() => setSelectedButton('Button 4')}
                       className={
                         selectedButton === 'Button 4'
-                          ? 'bg-primary text-black rounded-lg'
+                          ? 'bg-primary text-black rounded-lg w-[215px]'
                           : ''
                       }
                     >
@@ -214,7 +214,7 @@ const Dashboard = () => {
                       onClick={() => setSelectedButton('Button 6')}
                       className={
                         selectedButton === 'Button 6'
-                          ? 'bg-primary text-black rounded-lg'
+                          ? 'bg-primary text-black rounded-lg w-[215px]'
                           : ''
                       }
                     >
@@ -246,7 +246,7 @@ const Dashboard = () => {
                       onClick={() => setSelectedButton('Button 7')}
                       className={
                         selectedButton === 'Button 7'
-                          ? 'bg-primary text-black rounded-lg'
+                          ? 'bg-primary text-black rounded-lg w-[215px]'
                           : ''
                       }
                     >
