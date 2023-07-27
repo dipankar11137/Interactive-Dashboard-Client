@@ -17,7 +17,7 @@ const BuyProducts = () => {
   const totalPrice = quantity * product?.price;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${id}`)
+    fetch(`https://interective-dashboard-server.onrender.com/product/${id}`)
       .then(res => res.json())
       .then(data => setProduct(data));
   }, [id]);
@@ -41,7 +41,7 @@ const BuyProducts = () => {
       userName,
     };
     // console.log(changeUrl);
-    const url = `http://localhost:5000/buyProducts`;
+    const url = `https://interective-dashboard-server.onrender.com/buyProducts`;
     fetch(url, {
       method: 'POST',
       headers: {

@@ -6,7 +6,7 @@ const Contacts = () => {
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/contact')
+    fetch('https://interective-dashboard-server.onrender.com/contact')
       .then(res => res.json())
       .then(data => setContacts(data));
   }, [contacts]);
@@ -14,7 +14,7 @@ const Contacts = () => {
   const handleDelete = id => {
     const proceed = window.confirm('Are You Sure ?');
     if (proceed) {
-      const url = `http://localhost:5000/contact/${id}`;
+      const url = `https://interective-dashboard-server.onrender.com/contact/${id}`;
       fetch(url, {
         method: 'DELETE',
       })

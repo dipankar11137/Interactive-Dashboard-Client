@@ -22,7 +22,9 @@ const EditProfile = () => {
   } = useForm();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${authUser?.email}`)
+    fetch(
+      `https://interective-dashboard-server.onrender.com/user/${authUser?.email}`
+    )
       .then(res => res.json())
       .then(data => setUser(data));
   }, [authUser?.email, user]);
@@ -57,13 +59,16 @@ const EditProfile = () => {
             image,
           };
           // console.log(updatedProfile);
-          fetch(`http://localhost:5000/create-user/${user?.email}`, {
-            method: 'PUT',
-            headers: {
-              'content-type': 'application/json',
-            },
-            body: JSON.stringify(updatedProfile),
-          })
+          fetch(
+            `https://interective-dashboard-server.onrender.com/create-user/${user?.email}`,
+            {
+              method: 'PUT',
+              headers: {
+                'content-type': 'application/json',
+              },
+              body: JSON.stringify(updatedProfile),
+            }
+          )
             .then(res => res.json())
             .then(data => {
               toast.success('Profile Successfully Updated');
@@ -87,13 +92,16 @@ const EditProfile = () => {
         bio,
         image,
       };
-      fetch(`http://localhost:5000/create-user/${user?.email}`, {
-        method: 'PUT',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify(updatedProfile),
-      })
+      fetch(
+        `https://interective-dashboard-server.onrender.com/create-user/${user?.email}`,
+        {
+          method: 'PUT',
+          headers: {
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify(updatedProfile),
+        }
+      )
         .then(res => res.json())
         .then(data => {
           toast.success('Profile Successfully Updated');

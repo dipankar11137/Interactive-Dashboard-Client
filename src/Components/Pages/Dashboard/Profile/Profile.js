@@ -8,7 +8,9 @@ const Profile = () => {
   const user = dbUser[0];
 
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${authUser?.email}`)
+    fetch(
+      `https://interective-dashboard-server.onrender.com/user/${authUser?.email}`
+    )
       .then(res => res.json())
       .then(data => setDbUser(data));
   }, [dbUser, authUser]);

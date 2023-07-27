@@ -35,13 +35,16 @@ const CreateAccount = () => {
   }
 
   const createDBUser = (name, email) => {
-    fetch(`http://localhost:5000/create-user/${email}`, {
-      method: 'PUT',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify({ name, email }),
-    })
+    fetch(
+      `https://interective-dashboard-server.onrender.com/create-user/${email}`,
+      {
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({ name, email }),
+      }
+    )
       .then(res => res.json())
       .then(data => {
         toast.success('Updated profile');

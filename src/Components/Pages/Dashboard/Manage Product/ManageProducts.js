@@ -8,12 +8,12 @@ const ManageProducts = () => {
   const [increase, setIncrease] = useState(false);
   const [decrease, setDecrease] = useState(false);
   useEffect(() => {
-    fetch('http://localhost:5000/allProduct')
+    fetch('https://interective-dashboard-server.onrender.com/allProduct')
       .then(res => res.json())
       .then(data => setProducts(data));
   }, [products]);
   const handleEdit = id => {
-    fetch(`http://localhost:5000/product/${id}`)
+    fetch(`https://interective-dashboard-server.onrender.com/product/${id}`)
       .then(res => res.json())
       .then(data => setSingleProduct(data));
   };
@@ -25,13 +25,16 @@ const ManageProducts = () => {
     // console.log(newQuantity);
 
     const updateQuantity = { quantity: newQuantity };
-    fetch(`http://localhost:5000/productId/${singleProduct?._id}`, {
-      method: 'PUT',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(updateQuantity),
-    })
+    fetch(
+      `https://interective-dashboard-server.onrender.com/productId/${singleProduct?._id}`,
+      {
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(updateQuantity),
+      }
+    )
       .then(res => res.json())
       .then(data => {
         toast.success('Restock Is Successfully');
@@ -51,13 +54,16 @@ const ManageProducts = () => {
         parseInt(singleProduct?.quantity) -
         parseInt(event.target.quantity.value);
       const updateQuantity = { quantity: newQuantity };
-      fetch(`http://localhost:5000/productId/${singleProduct?._id}`, {
-        method: 'PUT',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify(updateQuantity),
-      })
+      fetch(
+        `https://interective-dashboard-server.onrender.com/productId/${singleProduct?._id}`,
+        {
+          method: 'PUT',
+          headers: {
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify(updateQuantity),
+        }
+      )
         .then(res => res.json())
         .then(data => {
           toast.success('Decrease Is Successfully');
@@ -71,7 +77,7 @@ const ManageProducts = () => {
   const handleDelete = id => {
     const proceed = window.confirm('Are You Sure ?');
     if (proceed) {
-      const url = `http://localhost:5000/product/${id}`;
+      const url = `https://interective-dashboard-server.onrender.com/product/${id}`;
       fetch(url, {
         method: 'DELETE',
       })

@@ -5,7 +5,9 @@ const Headphone = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-     fetch(`http://localhost:5000/products/Headphone`)
+     fetch(
+       `https://interective-dashboard-server.onrender.com/products/Headphone`
+     )
        .then(res => res.json())
        .then(data => setProducts(data));
   }, [products]);

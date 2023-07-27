@@ -12,7 +12,7 @@ const Contact = () => {
   } = useForm();
   const onSubmit = data => {
     const updateData = { ...data };
-    const url = `http://localhost:5000/contact`;
+    const url = `https://interective-dashboard-server.onrender.com/contact`;
     fetch(url, {
       method: 'POST',
       headers: {

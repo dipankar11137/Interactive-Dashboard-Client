@@ -14,7 +14,9 @@ const MyBookings = () => {
   const [chat, setChat] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
-    fetch(`http://localhost:5000/buyProduct/${email}`)
+    fetch(
+      `https://interective-dashboard-server.onrender.com/buyProduct/${email}`
+    )
       .then(res => res.json())
       .then(data => setBuys(data));
   }, [buys, email]);
@@ -26,7 +28,7 @@ const MyBookings = () => {
   const handleRemove = id => {
     const proceed = window.confirm('Are You Sure ?');
     if (proceed) {
-      const url = `http://localhost:5000/buyProduct/${id}`;
+      const url = `https://interective-dashboard-server.onrender.com/buyProduct/${id}`;
       fetch(url, {
         method: 'DELETE',
       })

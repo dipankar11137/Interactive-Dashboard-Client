@@ -16,14 +16,16 @@ const Header = () => {
   const [filteredCards, setFilteredCards] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${authUser?.email}`)
+    fetch(
+      `https://interective-dashboard-server.onrender.com/user/${authUser?.email}`
+    )
       .then(res => res.json())
       .then(data => setDbUser(data));
   }, [dbUser, authUser]);
 
   const [searchQuery, setSearchQuery] = useState('');
   useEffect(() => {
-    fetch('http://localhost:5000/allProduct')
+    fetch('https://interective-dashboard-server.onrender.com/allProduct')
       .then(res => res.json())
       .then(data => {
         setCards(data);

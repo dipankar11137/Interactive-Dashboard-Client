@@ -29,7 +29,7 @@ const AddItem = () => {
         const image = imageData.data.url;
         const changeUrl = { ...data, category: category, img: image };
         console.log(changeUrl);
-        fetch(`http://localhost:5000/allProduct`, {
+        fetch(`https://interective-dashboard-server.onrender.com/allProduct`, {
           method: 'POST',
           headers: {
             'content-type': 'application/json',

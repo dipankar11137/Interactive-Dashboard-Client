@@ -5,7 +5,7 @@ const Mobiles = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products/Mobile`)
+    fetch(`https://interective-dashboard-server.onrender.com/products/Mobile`)
       .then(res => res.json())
       .then(data => setProducts(data));
   }, [products]);

@@ -5,20 +5,23 @@ import ManageBooking from './ManageBooking';
 const ManageBookings = () => {
   const [buys, setBuys] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/buyProducts`)
+    fetch(`https://interective-dashboard-server.onrender.com/buyProducts`)
       .then(res => res.json())
       .then(data => setBuys(data));
   }, [buys]);
 
   const handleDelivered = id => {
     const updateDelivered = { delivered: true };
-    fetch(`http://localhost:5000/buyDelivered/${id}`, {
-      method: 'PUT',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(updateDelivered),
-    })
+    fetch(
+      `https://interective-dashboard-server.onrender.com/buyDelivered/${id}`,
+      {
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(updateDelivered),
+      }
+    )
       .then(res => res.json())
       .then(data => {
         toast.success('Successfully Delivered  Blood ');
@@ -28,7 +31,7 @@ const ManageBookings = () => {
   const handleDelete = id => {
     const proceed = window.confirm('Are You Sure ?');
     if (proceed) {
-      const url = `http://localhost:5000/buyProduct/${id}`;
+      const url = `https://interective-dashboard-server.onrender.com/buyProduct/${id}`;
       fetch(url, {
         method: 'DELETE',
       })

@@ -5,7 +5,7 @@ const Tv = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-   fetch(`http://localhost:5000/products/TV`)
+   fetch(`https://interective-dashboard-server.onrender.com/products/TV`)
      .then(res => res.json())
      .then(data => setProducts(data));
   }, [products]);
