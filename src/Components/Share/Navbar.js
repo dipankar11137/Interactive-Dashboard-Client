@@ -114,7 +114,7 @@ const Navbar = () => {
                 All Categories
               </option>
               <option>
-                <Link href="home#tv"> TV</Link>
+                <Link href="/"> TV</Link>
               </option>
               <option>Headphone</option>
               <option>Computer Accessories </option>

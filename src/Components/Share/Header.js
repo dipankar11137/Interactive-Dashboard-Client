@@ -13,6 +13,7 @@ const Header = () => {
   const [heart, setHeart] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [cards, setCards] = useState([]);
+  const [carts, setCarts] = useState([]);
   const [filteredCards, setFilteredCards] = useState([]);
 
   useEffect(() => {
@@ -32,6 +33,15 @@ const Header = () => {
         setFilteredCards(data);
       });
   }, []);
+  useEffect(() => {
+    fetch(
+      `https://interective-dashboard-server.onrender.com/cartProducts/${authUser?.email}`
+    )
+      .then(res => res.json())
+      .then(data => {
+        setCarts(data);
+      });
+  }, [authUser?.email, carts]);
   const handleSearch = e => {
     const query = e.target.value;
     setSearchQuery(query);
@@ -102,7 +112,13 @@ const Header = () => {
 
             <div className="flex ml-10 ">
               <BsFillCartDashFill className="text-2xl mt-1" />
-              <h1 className="text-2xl ml-1 font-bold">Cart</h1>
+              {/* <h1 className="text-2xl ml-1 font-bold">Cart {carts.length}</h1> */}
+              <div className="indicator">
+                <span className="indicator-item badge badge-primary">
+                  {carts.length}
+                </span>
+                <h1 className="text-2xl ml-1 font-bold">Cart</h1>
+              </div>
             </div>
             <div className="ml-5">
               {authUser && (
