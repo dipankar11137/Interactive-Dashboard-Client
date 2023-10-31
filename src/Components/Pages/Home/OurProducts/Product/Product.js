@@ -17,7 +17,7 @@ const Product = ({ product, setSearchOpen }) => {
   const handleCart = id => {
     const carts = { id, email };
 
-    const url = `https://interective-dashboard-server.onrender.com/cartProducts/cartProducts`;
+    const url = `https://interective-dashboard-server.onrender.com/cartProducts`;
     fetch(url, {
       method: 'POST',
       headers: {
