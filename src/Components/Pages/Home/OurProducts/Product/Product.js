@@ -15,7 +15,7 @@ const Product = ({ product, setSearchOpen }) => {
     setSearchOpen(false);
   };
   const handleCart = id => {
-    const carts = { id, email };
+    const carts = { id, email, product };
 
     const url = `https://interective-dashboard-server.onrender.com/cartProducts`;
     fetch(url, {

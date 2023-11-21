@@ -15,6 +15,7 @@ import 'aos/dist/aos.css';
 import RequireAuth from './Components/Login/RequireAUth';
 import About from './Components/Pages/About/About';
 import AddItem from './Components/Pages/Dashboard/Add Product/AddItem';
+import Carts from './Components/Pages/Dashboard/Cart/Carts';
 import Contacts from './Components/Pages/Dashboard/Contacts/Contacts ';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
 import ManageProducts from './Components/Pages/Dashboard/Manage Product/ManageProducts';
@@ -50,6 +51,14 @@ function App() {
           element={
             <RequireAuth>
               <Payment />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/cart"
+          element={
+            <RequireAuth>
+              <Carts />
             </RequireAuth>
           }
         ></Route>

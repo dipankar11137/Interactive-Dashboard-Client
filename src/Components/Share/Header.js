@@ -3,13 +3,14 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { BsFillCartDashFill, BsHeartFill } from 'react-icons/bs';
 import { FaRegHeart } from 'react-icons/fa';
 import { ImCross, ImSearch } from 'react-icons/im';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import '../CSS/search-bar.css';
 import Product from '../Pages/Home/OurProducts/Product/Product';
 const Header = () => {
   const [authUser] = useAuthState(auth);
   const [dbUser, setDbUser] = useState([]);
+  const navigator = useNavigate();
   const [heart, setHeart] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [cards, setCards] = useState([]);
@@ -54,6 +55,10 @@ const Header = () => {
       card.name.toLowerCase().includes(query.toLowerCase())
     );
     setFilteredCards(filtered);
+  };
+
+  const handleCart = () => {
+    navigator('/cart');
   };
   const profilePic =
     'https://media.istockphoto.com/id/1393750072/vector/flat-white-icon-man-for-web-design-silhouette-flat-illustration-vector-illustration-stock.jpg?s=612x612&w=0&k=20&c=s9hO4SpyvrDIfELozPpiB_WtzQV9KhoMUP9R9gVohoU=';
@@ -110,16 +115,16 @@ const Header = () => {
               />
             )}
 
-            <div className="flex ml-10 ">
+            <button onClick={handleCart} className="flex ml-10 ">
               <BsFillCartDashFill className="text-2xl mt-1" />
               {/* <h1 className="text-2xl ml-1 font-bold">Cart {carts.length}</h1> */}
               <div className="indicator">
-                <span className="indicator-item badge badge-primary">
+                <span className="indicator-item badge badge-secondary">
                   {carts.length}
                 </span>
                 <h1 className="text-2xl ml-1 font-bold">Cart</h1>
               </div>
-            </div>
+            </button>
             <div className="ml-5">
               {authUser && (
                 <div className="avatar online">
