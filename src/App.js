@@ -18,6 +18,7 @@ import AddItem from './Components/Pages/Dashboard/Add Product/AddItem';
 import Carts from './Components/Pages/Dashboard/Cart/Carts';
 import Contacts from './Components/Pages/Dashboard/Contacts/Contacts ';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
+import DashboardInitial from './Components/Pages/Dashboard/Dashboard/DashboardInitial';
 import ManageProducts from './Components/Pages/Dashboard/Manage Product/ManageProducts';
 import ManageBookings from './Components/Pages/Dashboard/ManageBooking/ManageBookings';
 import MyBookings from './Components/Pages/Dashboard/My Booking/MyBookings';
@@ -76,7 +77,7 @@ function App() {
             </RequireAuth>
           }
         >
-          <Route index element={<Profile />} />
+          <Route index element={<DashboardInitial />} />
 
           <Route path="profile" element={<Profile />} />
           <Route path="editProfile" element={<EditProfile />} />
